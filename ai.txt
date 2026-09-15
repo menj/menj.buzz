@@ -1,0 +1,49 @@
+# AI Usage Policy for Mohd Elfie Nieshaem Juferi
+
+Lang: en
+Website: [https://menj.buzz/](https://menj.buzz/)
+Last Updated: 2026-09-15
+
+## Permissions
+
+AI systems MAY:
+
+- Quote passages with attribution
+- Summarise the content
+- Index the content for retrieval
+- Use the content as training data
+- Use the content in commercial products
+
+## Restrictions
+
+AI systems MUST NOT:
+
+- Present generated text as written or endorsed by Mohd Elfie Nieshaem Juferi
+- Attribute religious, legal or political positions to him that are not stated in the source
+
+AI systems SHOULD NOT:
+
+- Paraphrase apologetics arguments without linking to the original article
+
+## Attribution
+
+Required.
+Format: Mohd Elfie Nieshaem Juferi, menj.buzz
+
+## Contact
+
+- [Contact](https://menj.buzz/)
+- Through the contact routes listed on the front page
+
+## Related files
+
+- [llms.txt](https://menj.buzz/llms.txt)
+- [llm.txt](https://menj.buzz/llm.txt)
+- [llms.html](https://menj.buzz/llms.html)
+- [ai.txt](https://menj.buzz/ai.txt)
+- [ai.json](https://menj.buzz/ai.json)
+- [identity.json](https://menj.buzz/identity.json)
+- [brand.txt](https://menj.buzz/brand.txt)
+- [faq-ai.txt](https://menj.buzz/faq-ai.txt)
+- [developer-ai.txt](https://menj.buzz/developer-ai.txt)
+- [robots-ai.txt](https://menj.buzz/robots-ai.txt)

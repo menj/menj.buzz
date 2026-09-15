@@ -1,0 +1,49 @@
+# Technical Context - Mohd Elfie Nieshaem Juferi
+
+Lang: en
+Website: [https://menj.buzz/](https://menj.buzz/)
+Last Updated: 2026-09-15
+
+## Platform
+
+- Static site, no CMS and no database
+- Language: en
+- Character Set: UTF-8
+
+## Technology Stack
+
+- Flat-file JSON content in data/
+- Node build script (build/render.mjs) rendering static HTML
+- Tailwind CSS compiled at build time
+- Vanilla JavaScript, no framework
+- Self-hosted woff2 fonts, no third-party requests
+
+## Developer Notes
+
+- Every page is served as static HTML; nothing is assembled in the browser except the blog feed.
+- Structured data is a single JSON-LD @graph per page, generated from the same JSON that fills the page.
+- External identifiers are pulled from menj.bio/identity.json at build time.
+
+## Data Feeds
+
+- [Blog (WordPress REST)](https://menj.blog/wp-json/wp/v2/posts)
+- [Archive library index (YAML)](https://menj.bio/library.yaml)
+- [Archive identity record](https://menj.bio/identity.json)
+
+## AI Discovery Files
+
+- [AI Discovery (llms.txt)](https://menj.buzz/llms.txt)
+- [AI Discovery legacy alias (llm.txt)](https://menj.buzz/llm.txt)
+- [AI Discovery, HTML (llms.html)](https://menj.buzz/llms.html)
+- [AI Usage Policy (ai.txt)](https://menj.buzz/ai.txt)
+- [AI Permissions (ai.json)](https://menj.buzz/ai.json)
+- [Identity (identity.json)](https://menj.buzz/identity.json)
+- [Brand Terminology (brand.txt)](https://menj.buzz/brand.txt)
+- [FAQs for AI (faq-ai.txt)](https://menj.buzz/faq-ai.txt)
+- [Developer Context (developer-ai.txt)](https://menj.buzz/developer-ai.txt)
+- [AI Crawler Access (robots-ai.txt)](https://menj.buzz/robots-ai.txt)
+
+## Sitemaps
+
+- [XML sitemap](https://menj.buzz/sitemap.xml)
+- [HTML sitemap](https://menj.buzz/sitemap/)

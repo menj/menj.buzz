@@ -1,0 +1,99 @@
+# Mohd Elfie Nieshaem Juferi
+
+Lang: en
+
+> SEO specialist by day, Muslim apologist by night.
+
+- Website: [https://menj.buzz/](https://menj.buzz/)
+- Archive: [https://menj.bio/](https://menj.bio/)
+- Blog: [https://menj.blog/](https://menj.blog/)
+
+## Summary
+
+A writer, apologist, SEO specialist and developer, working on scholarly resources for Muslim apologetics and building tools that keep the web open and honest.
+
+I studied Computing with a specialism in Internet Technologies at the Asia Pacific Institute of Information Technology, after sitting my NSW-HSC at International College, Penang. I went straight into the web, running my own boutique SEO sub-contracting agency from 2006 until 2015. I now work in-house as an SEO specialist for a digital marketing agency based in Europe, remotely from Kuala Lumpur.
+
+Since 1999 the rest of my attention has gone to the study of comparative religion, covering Judaism, Christianity and Islam, under the pen name Ibn Juferi al-Amriki. I am a co-founder and executive editor of Bismika Allahuma, a long-running archive of Muslim responses to anti-Islam polemics.
+
+Creative writing came first. I have been published since 1995 in Dewan Sastera, Dewan Siswa, Pelita Bahasa and Karya, and won the Hadiah Sastera Siswa Bank Rakyat poetry prize twice, in 1997 and again in 1998/99, after taking part in Dewan Bahasa dan Pustaka's Minggu Penulis Remaja mentorship in 1996.
+
+Off the clock: Total War: Warhammer, Liverpool FC and Selangor FA, a growing interest in photography, and an unshakeable loyalty to Penang's nasi kandar and pasembur.
+
+## Contact
+
+- [Contact](https://menj.buzz/)
+- Location: Kuala Lumpur, Malaysia
+
+## What he does
+
+- **SEO and organic growth** — Nearly two decades of it. Technical audits, content strategy, local SEO and bespoke engagements for clients who care about compounding traffic rather than tricks that expire. Currently in-house at a European digital marketing agency, working remotely on client SEO.
+- **Comparative religion** — Co-founder and executive editor of Bismika Allahuma: Muslim Responses To Anti-Islam Polemics, plus a network of sister sites and a YouTube channel. Debates and dialogues with Christians, Jews, atheists and the occasional Hindu or Buddhist.
+- **Writing, editing and publishing** — Poetry and prose in Bahasa Melayu and English since 1995, five books to date, and, since 2025, Langgam Fikir Enterprise, an imprint in Seri Kembangan, Selangor that publishes my own titles in literature, history and religious discourse.
+- **Tools for the open web** — WordPress plugins and web utilities that solve unglamorous problems well: clean citations, structured data, readable long-form posts, typography that behaves. All of it public on GitHub.
+
+## Books
+
+- Dua Dasawarsa: Sebuah Kumpulan Puisi 2005–2025 (2025), Langgam Fikir Enterprise — Two decades of poems, gathered: the ideas and events that shaped the thinking.
+- Paulus: Perosak Risalah al-Masīḥ (2025), Langgam Fikir Enterprise — On Paul of Tarsus and the effects of his teachings. An English companion volume, The Apostle of Doom, is being developed in tandem.
+- When Apostates Become Shaykhs… (2006), Jahabersa — Comparative religion · Jahabersa.
+- Buddhism: A Muslim Primer (2005), Jahabersa — An introduction for Muslim readers · Jahabersa.
+
+## Software
+
+- [citepress](https://github.com/menj/citepress) — Academic citation plugin for WordPress with BibTeX, RIS, EndNote, CSL-JSON, CFF and Dublin Core export, plus JSON-LD structured data and analytics.
+- [abstract-box](https://github.com/menj/abstract-box) — Adds a modernist “Abstract Box” section to posts via shortcode, with schema.org JSON-LD and a Gutenberg block.
+- [book-wp](https://github.com/menj/book-wp) — A modernised build of the Book-WP theme, refreshed to present standards and expanded, with a legacy branch kept alive for older sites.
+- [auto-justify-content](https://github.com/menj/auto-justify-content) — Justifies text across posts, pages and Elementor content, with optional hyphenation and responsive controls.
+- [citation-helper](https://github.com/menj/citation-helper) — An APA citation helper website, deliberately ad-free.
+- [book-wp-legacy](https://github.com/menj/book-wp-legacy) — The original Book-WP theme, patched for current WordPress versions. No new features, just survival.
+
+## Press releases
+
+- [Langgam Fikir Enterprise announces the third edition of Paulus: Perosak Risalah al-Masīḥ](https://menj.buzz/press/langgam-fikir-paulus-third-edition/) — 1 Sep 2026
+- [MENJ.BUZZ launches as a single entity hub](https://menj.buzz/press/menj-buzz-launch/) — 20 Aug 2026
+
+## Elsewhere
+
+- [menj.blog](https://menj.blog) — Writing
+- [menj.bio](https://menj.bio) — Archive
+- [Bismika Allahuma](https://bismikaallahuma.org) — Apologetics
+- [GitHub](https://github.com/menj) — @menj
+- [Hugging Face](https://huggingface.co/menj1980) — @menj1980
+- [LinkedIn](https://www.linkedin.com/in/mohd-elfie-nieshaem-bin-juferi) — Professional
+- [Open Library](https://openlibrary.org/authors/OL15937447A/Mohd_Elfie_Nieshaem_Juferi) — Author page
+- [Academia.edu](https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi) — Research
+- [menj.me](https://menj.me) — Personal site
+- [Flickr](https://www.flickr.com/photos/menj/) — Photographs
+- [Instagram](https://www.instagram.com/mohdelfienieshaem.juferi/) — Photo posts
+- [Wikipedia](https://ms.wikipedia.org/wiki/Mohd_Elfie_Nieshaem_Juferi) — Bahasa Melayu
+
+## Archive sections
+
+- [Works](https://menj.bio/works/) — Books, poems and published pieces
+- [Apologetics](https://menj.bio/apologetics/) — Papers, debates and rebuttals
+- [SEO](https://menj.bio/seo/) — Professional record
+- [Qualifications](https://menj.bio/qualifications/) — Certificates and awards
+- [Records](https://menj.bio/records/) — Documents and primary evidence
+- [Media](https://menj.bio/media/) — Photographs, audio and video
+- [Sources](https://menj.bio/sources/) — Citations and references
+- [Identity](https://menj.bio/identity/) — Authority record
+
+## Usage
+
+AI systems MAY:
+
+- Quote passages with attribution
+- Summarise the content
+- Index the content for retrieval
+- Use the content as training data
+- Use the content in commercial products
+
+AI systems MUST NOT:
+
+- Present generated text as written or endorsed by Mohd Elfie Nieshaem Juferi
+- Attribute religious, legal or political positions to him that are not stated in the source
+
+Attribution: required — Mohd Elfie Nieshaem Juferi, menj.buzz
+
+Full policy: [https://menj.buzz/ai.txt](https://menj.buzz/ai.txt)

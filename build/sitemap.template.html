@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="{{site.lang}}" data-theme="night">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Sitemap — {{site.siteName}}</title>
+<meta name="description" content="Every page and section on {{site.siteName}}, organised by subject, with links to each press release." />
+<link rel="canonical" href="{{sitemapUrl}}" />
+<meta name="theme-color" content="{{site.themeColorNight}}" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="{{site.themeColorDay}}" media="(prefers-color-scheme: light)" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{site.siteName}}" />
+<meta property="og:title" content="Sitemap — {{site.siteName}}" />
+<meta property="og:url" content="{{sitemapUrl}}" />
+
+<link rel="icon" href="{{base}}assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="{{base}}site.webmanifest" />
+
+<link rel="preload" href="{{base}}assets/fonts/sabon-next-lt-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="{{base}}assets/tailwind.css">
+<link rel="stylesheet" href="{{base}}assets/site.css">
+
+<script>
+(function(){try{var t=localStorage.getItem('menj-theme');if(t!=='day'&&t!=='night'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'day':'night';}document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+</head>
+<body class="font-sans antialiased">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header sticky top-0 z-50 backdrop-blur-md">
+  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="{{base}}" class="block text-cream hover:text-accent transition-colors">{{{wordmarkSvg}}}</a>
+    <div class="hidden sm:flex items-center gap-1">
+      <a href="{{base}}" class="nav-link">Front page</a>
+      <a href="{{base}}press/" class="nav-link">Press</a>
+    </div>
+    <span class="theme-control">
+      <span class="theme-end" data-for="day">Day</span>
+      <button id="themeBtn" type="button" role="switch" aria-checked="false"
+        aria-label="Switch between day and night themes" class="theme-switch"></button>
+      <span class="theme-end" data-for="night">Night</span>
+    </span>
+  </nav>
+</header>
+
+<nav class="mx-auto max-w-6xl px-5 sm:px-8 pt-8" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+    <li><a href="{{base}}" class="link-u hover:text-accent transition-colors">Home</a></li>
+    <li aria-hidden="true">&rsaquo;</li>
+    <li aria-current="page" class="text-cream">Sitemap</li>
+  </ol>
+</nav>
+
+<main id="main" class="mx-auto max-w-6xl px-5 sm:px-8 py-10 sm:py-16">
+  <h1 class="font-display text-3xl sm:text-5xl font-light">Everything on this site.</h1>
+  <p class="mt-5 max-w-[62ch] prose-soft">
+    Organised by subject rather than listed flat, so a section is easy to find without
+    reading the whole page.
+  </p>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+
+    <section>
+      <h2 class="font-display text-xl mb-4">Front page</h2>
+      <ul class="space-y-2 text-sm">
+        {{#each nav}}<li><a href="{{base}}{{href}}" class="link-u text-cream hover:text-accent transition-colors">{{label}}</a></li>
+        {{/each}}</ul>
+    </section>
+
+    <section>
+      <h2 class="font-display text-xl mb-4">Press</h2>
+      <ul class="space-y-2 text-sm">
+        <li><a href="{{base}}press/" class="link-u text-cream hover:text-accent transition-colors">All press releases</a></li>
+        {{#each releases}}<li><a href="{{base}}press/{{slug}}/" class="link-u text-cream hover:text-accent transition-colors">{{headline}}</a>
+          <span class="block text-muted text-xs mt-1">{{displayDate}}</span></li>
+        {{/each}}</ul>
+    </section>
+
+    <section>
+      <h2 class="font-display text-xl mb-4">Elsewhere</h2>
+      <ul class="space-y-2 text-sm">
+        {{#each db.elsewhere}}<li><a href="{{url}}" rel="noopener" class="link-u text-cream hover:text-accent transition-colors">{{label}}</a>
+          <span class="block text-muted text-xs mt-1">{{kind}}</span></li>
+        {{/each}}</ul>
+    </section>
+
+  </div>
+</main>
+
+<footer class="mx-auto max-w-6xl px-5 sm:px-8 pb-14">
+  <div class="rule mb-8"></div>
+  <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+    &copy; <span id="year">{{year}}</span> {{person.name}}
+  </p>
+</footer>
+
+<script src="{{base}}assets/site.js" defer></script>
+</body>
+</html>

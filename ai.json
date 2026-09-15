@@ -1,0 +1,71 @@
+{
+  "language": "en",
+  "name": "Mohd Elfie Nieshaem Juferi",
+  "url": "https://menj.buzz/",
+  "lastUpdated": "2026-09-15",
+  "permissions": [
+    {
+      "description": "Quote passages with attribution",
+      "conditions": [
+        "attribution required"
+      ]
+    },
+    {
+      "description": "Summarise the content",
+      "conditions": [
+        "attribution required"
+      ]
+    },
+    {
+      "description": "Index the content for retrieval",
+      "conditions": [
+        "attribution required"
+      ]
+    },
+    {
+      "description": "Use the content as training data",
+      "conditions": [
+        "attribution required"
+      ]
+    },
+    {
+      "description": "Use the content in commercial products",
+      "conditions": [
+        "attribution required"
+      ]
+    }
+  ],
+  "restrictions": [
+    {
+      "severity": "must-not",
+      "description": "Present generated text as written or endorsed by Mohd Elfie Nieshaem Juferi"
+    },
+    {
+      "severity": "must-not",
+      "description": "Attribute religious, legal or political positions to him that are not stated in the source"
+    },
+    {
+      "severity": "should-not",
+      "description": "Paraphrase apologetics arguments without linking to the original article"
+    }
+  ],
+  "attribution": {
+    "required": true,
+    "format": "Mohd Elfie Nieshaem Juferi, menj.buzz"
+  },
+  "contact": {
+    "url": "https://menj.buzz/"
+  },
+  "files": {
+    "llms.txt": "https://menj.buzz/llms.txt",
+    "llm.txt": "https://menj.buzz/llm.txt",
+    "llms.html": "https://menj.buzz/llms.html",
+    "ai.txt": "https://menj.buzz/ai.txt",
+    "ai.json": "https://menj.buzz/ai.json",
+    "identity.json": "https://menj.buzz/identity.json",
+    "brand.txt": "https://menj.buzz/brand.txt",
+    "faq-ai.txt": "https://menj.buzz/faq-ai.txt",
+    "developer-ai.txt": "https://menj.buzz/developer-ai.txt",
+    "robots-ai.txt": "https://menj.buzz/robots-ai.txt"
+  }
+}

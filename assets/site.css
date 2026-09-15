@@ -1,0 +1,689 @@
+/* =========================================================================
+   Sabon Next LT — self-hosted, subsetted to Latin, Latin Extended and the
+   punctuation this site uses. Licensed font software: the files in
+   assets/fonts/ are covered by the site owner's Linotype/Monotype licence,
+   and must not be redistributed with the source.
+   ========================================================================= */
+@font-face {
+  font-family: 'Special Elite';
+  src: url('fonts/special-elite-regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/eb-garamond-variable.woff2') format('woff2-variations'),
+       url('fonts/eb-garamond-variable.woff2') format('woff2');
+  font-weight: 400 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/eb-garamond-italic-variable.woff2') format('woff2-variations'),
+       url('fonts/eb-garamond-italic-variable.woff2') format('woff2');
+  font-weight: 400 800; font-style: italic; font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sabon Next LT';
+  src: url('fonts/sabon-next-lt-regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Sabon Next LT';
+  src: url('fonts/sabon-next-lt-italic.woff2') format('woff2');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Sabon Next LT';
+  src: url('fonts/sabon-next-lt-bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Sabon Next LT';
+  src: url('fonts/sabon-next-lt-bolditalic.woff2') format('woff2');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+/* =========================================================================
+   menj — site styles
+   Theme tokens, motion, and component styles. Utility classes come from
+   Tailwind; everything here is either a design token or a bespoke effect.
+   ========================================================================= */
+
+:root,
+[data-theme="night"] {
+  --c-ink: #0a0a10;
+  --c-surface: #13131c;
+  --c-line: rgba(255, 255, 255, .10);
+  --c-cream: #f4f0e7;
+  --c-muted: #9891a6;
+  --c-body: rgba(244, 240, 231, .80);   /* body copy on dark */
+  --c-body-soft: rgba(244, 240, 231, .70);
+  --c-accent: #e2a44e;
+  --c-accent2: #8ea2ff;
+  --grain: .05;
+}
+
+[data-theme="day"] {
+  --c-ink: #f6f2ea;
+  --c-surface: #ffffff;
+  --c-line: rgba(24, 18, 10, .13);
+  --c-cream: #17151c;
+  --c-muted: #56506a;                   /* darkened for AA on white */
+  --c-body: rgba(23, 21, 28, .92);      /* opacity raised: AA at 14–15px */
+  --c-body-soft: rgba(23, 21, 28, .84);
+  --c-accent: #8a4c0a;
+  --c-accent2: #22389f;
+  --grain: .035;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  /* Three faces, three jobs: Sabon Next LT sets the display sizes, EB Garamond
+     sets the reading text, Special Elite sets the labels. Garamond runs small
+     on screen, hence the larger body size and slightly open leading. */
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.62;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+  background-color: var(--c-ink);
+  color: var(--c-cream);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .5s ease, color .5s ease;
+}
+
+/* Body copy tokens — replace the former text-cream/75 alpha utilities,
+   which fell below AA once the day theme inverted the surface. */
+.prose-body { color: var(--c-body); }
+.prose-soft { color: var(--c-body-soft); }
+
+/* Film grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: var(--grain);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Header backdrop — solid fallback first, color-mix second. */
+.site-header {
+  border-bottom: 1px solid var(--c-line);
+  background: var(--c-ink);
+}
+@supports (background: color-mix(in srgb, red 50%, transparent)) {
+  .site-header { background: color-mix(in srgb, var(--c-ink) 78%, transparent); }
+}
+
+.portrait {
+  border: 1px solid var(--c-line);
+  background: var(--c-surface);
+  object-position: center top;
+}
+@supports (background: color-mix(in srgb, red 50%, transparent)) {
+  .portrait { background: color-mix(in srgb, var(--c-accent) 10%, transparent); }
+}
+
+/* Scroll reveal */
+/* Contents rail — borrowed from the reference layout. Appears only when the
+   viewport is wide enough to hold it outside the centred column, so it never
+   competes with the content. */
+.contents {
+  display: none;
+  position: fixed;
+  top: 6.5rem;
+  left: 2.5rem;
+  width: 12.5rem;
+  z-index: 40;
+}
+@media (min-width: 100rem) { .contents { display: block; } }
+
+.contents p {
+  margin: 0 0 1rem;
+  font-size: 11px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.contents ul { list-style: none; margin: 0; padding: 0; }
+.contents li { margin-bottom: .6rem; }
+.contents a {
+  color: var(--c-muted);
+  text-decoration: none;
+  font-size: .95rem;
+  transition: color .2s ease;
+}
+.contents a:hover,
+.contents a[aria-current="true"] { color: var(--c-cream); }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s cubic-bezier(.2, .7, .2, 1),
+              transform .8s cubic-bezier(.2, .7, .2, 1);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+.rule {
+  background: linear-gradient(90deg, transparent, var(--c-line) 12%, var(--c-line) 88%, transparent);
+  height: 1px;
+}
+
+.hairline { border-top: 1px solid var(--c-line); }
+.hairline-b { border-bottom: 1px solid var(--c-line); }
+
+.link-u {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size .35s ease;
+}
+.link-u:hover,
+.link-u:focus-visible { background-size: 100% 1px; }
+
+.card {
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  transition: transform .45s cubic-bezier(.2, .7, .2, 1), border-color .45s ease;
+}
+.card:hover,
+.card:focus-within { transform: translateY(-4px); border-color: var(--c-accent); }
+
+/* Marquee — pauses on hover and on keyboard focus anywhere inside. */
+.marquee-wrap { border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
+.marquee { display: flex; width: max-content; animation: slide 42s linear infinite; }
+.marquee-wrap:hover .marquee,
+.marquee-wrap:focus-within .marquee,
+.marquee[data-paused="true"] { animation-play-state: paused; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+.marquee-toggle {
+  position: absolute;
+  right: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+
+.blob {
+  background: radial-gradient(closest-side, var(--c-accent), transparent 70%);
+  filter: blur(60px);
+  opacity: .16;
+}
+
+::selection { background: var(--c-accent); color: var(--c-ink); }
+
+/* Visible keyboard focus across the whole page. */
+:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: .75rem 1.25rem;
+  background: var(--c-accent);
+  color: var(--c-ink);
+  font-size: .8rem;
+}
+.skip-link:focus { left: .5rem; top: .5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .card:hover, .card:focus-within { transform: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Wordmark ----------
+   Sabon Next LT outlines, so the logo needs no webfont to render correctly
+   and stays crisp at any size. MENJ takes currentColor, the separating point
+   takes the accent, BUZZ sits back. */
+.wordmark {
+  display: block;
+  height: 1.05rem;
+  width: auto;
+}
+.wordmark-j { fill: var(--c-accent); }
+.wordmark-dot { fill: var(--c-accent2); }
+.wordmark-soft { fill: currentColor; opacity: .45; }
+
+@media (min-width: 40rem) { .wordmark { height: 1.15rem; } }
+
+/* ---------- Text alignment ----------
+   Justified throughout: prose, headings, the standfirst, the hero eyebrow and
+   the footer note. Justification only affects lines that wrap, so a one-line
+   heading is unchanged; where a heading does wrap it now aligns to both
+   margins like the text beneath it.
+
+   Hyphenation comes with it. Justification without hyphens opens rivers at
+   these measures.
+
+   Excluded, deliberately: the navigation, the contents rail, the breadcrumbs
+   and the marquee. Those are controls and lists rather than reading text, and
+   stretching two words across a column makes them unreadable. Right-aligned
+   values in the identity table and the archive list keep their alignment,
+   since they are set against a left-hand label. */
+p, h1, h2, h3, blockquote, cite, li, dd, .about-body p, .lede, .font-display {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+
+.nav-link, .contents, .contents *, .marquee, .marquee *,
+nav[aria-label="Breadcrumb"], nav[aria-label="Breadcrumb"] *,
+.skip-link, button, dt {
+  text-align: left;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+.text-right, .text-right * { text-align: right; }
+
+/* Display sizes need looser hyphenation: a broken word is more visible at
+   2.2rem than at 18px. */
+h1, h2, .font-display { hyphenate-limit-chars: 10 5 4; }
+
+.about-body { text-wrap: pretty; }
+
+/* Narrow columns cannot absorb justification; below roughly 45 characters a
+   line the gaps become the dominant texture. */
+@media (max-width: 30rem) {
+  p, h1, h2, h3, blockquote, cite, li, dd, .about-body p, .lede, .font-display {
+    text-align: left;
+    hyphens: none;
+  }
+}
+
+/* ---------- Primary navigation ----------
+   Pill buttons rather than bare text: a larger hit area, a visible hover state
+   and a rounded shape that matches the buttons elsewhere on the page. The
+   background tint is the hover cue; colour alone is not enough. */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: .42rem .8rem;
+  border-radius: 999px;
+  font-size: .95rem;
+  line-height: 1.2;
+  color: var(--c-muted);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--c-cream);
+  border-color: var(--c-line);
+  background: rgba(244, 240, 231, .07);
+}
+
+[data-theme="day"] .nav-link:hover,
+[data-theme="day"] .nav-link:focus-visible {
+  background: rgba(23, 21, 28, .05);
+}
+
+.nav-link:active { transform: translateY(1px); }
+
+.nav-link[aria-current="page"] {
+  color: var(--c-cream);
+  border-color: var(--c-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link { transition: none; }
+  .nav-link:active { transform: none; }
+}
+
+/* ---------- Navigation: accent marker and tooltip ----------
+   The marker is a short accent bar that draws in under the label on hover, so
+   the item reads as active even at a glance. The tooltip names what the
+   section holds, which a one- or two-word label cannot. Both are suppressed
+   for touch, where there is no hover state to speak of. */
+.nav-link > span { position: relative; display: inline-block; }
+
+.nav-link > span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -.28rem;
+  height: 2px;
+  width: 0;
+  border-radius: 2px;
+  background: var(--c-accent);
+  transform: translateX(-50%);
+  transition: width .24s cubic-bezier(.2, .7, .2, 1);
+}
+
+.nav-link:hover > span::after,
+.nav-link:focus-visible > span::after,
+.nav-link[aria-current="page"] > span::after { width: 100%; }
+
+/* Tooltip */
+.nav-link::before {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + .65rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-3px);
+  z-index: 60;
+  white-space: nowrap;
+  padding: .4rem .7rem;
+  border-radius: .5rem;
+  border: 1px solid var(--c-line);
+  background: var(--c-surface);
+  color: var(--c-cream);
+  font-size: .76rem;
+  letter-spacing: .01em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
+}
+
+[data-theme="day"] .nav-link::before {
+  box-shadow: 0 8px 24px rgba(23, 21, 28, .12);
+}
+
+.nav-link:hover::before,
+.nav-link:focus-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-link[data-tip=""]::before { content: none; }
+
+@media (hover: none) {
+  .nav-link::before { content: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link > span::after,
+  .nav-link::before { transition: none; }
+}
+
+/* ---------- Label face ----------
+   Special Elite is a typewriter face: wider and heavier than the monospace it
+   replaces, so the uppercase labels need less tracking and a slightly smaller
+   size to sit at the same visual weight. */
+.font-mono {
+  letter-spacing: .12em !important;
+  font-size: .95em;
+}
+.marquee { letter-spacing: .16em; }
+
+/* ---------- Google Preferred Source button ----------
+   Styled as one of the site's own pill buttons. The glyph takes the accent so
+   the control reads as an action rather than a badge. */
+.gpr-trigger { cursor: pointer; }
+.gpr-trigger .gpr-glyph { color: var(--c-accent); flex: none; transition: transform .3s cubic-bezier(.2,.7,.2,1); }
+.gpr-trigger:hover .gpr-glyph { transform: rotate(72deg) scale(1.08); }
+
+@media (prefers-reduced-motion: reduce) {
+  .gpr-trigger .gpr-glyph { transition: none; }
+  .gpr-trigger:hover .gpr-glyph { transform: none; }
+}
+
+/* ---------- Face assignment ----------
+   Headings, the wordmark line and the standfirst stay in Sabon; everything
+   that is read at length is Garamond. */
+h1, h2, h3, .font-display, .lede {
+  font-family: 'Sabon Next LT', 'EB Garamond', Georgia, serif;
+}
+
+p, li, dd, blockquote, cite, .about-body, .prose-body, .prose-soft {
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+/* Garamond's numerals sit low; keep them lining inside the tables and lists
+   where they line up against labels. */
+dd, .year, time { font-variant-numeric: lining-nums; }
+
+/* ---------- Photo rows ----------
+   A plain grid rather than a carousel: every photograph is reachable without
+   a control, and the row reflows instead of scrolling sideways. */
+.photo-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .6rem;
+}
+@media (max-width: 40rem) { .photo-row { grid-template-columns: repeat(3, 1fr); } }
+
+.photo-row a {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--c-line);
+  background: var(--c-surface);
+}
+
+.photo-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .3s ease;
+  opacity: .88;
+}
+
+.photo-row a:hover img,
+.photo-row a:focus-visible img { transform: scale(1.06); opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-row img { transition: none; }
+  .photo-row a:hover img { transform: none; }
+}
+
+/* Long values in the Elsewhere directory must not run into the next column. */
+#elsewhere a > span:first-child { flex: 0 1 auto; min-width: 0; }
+#elsewhere a > span:last-child {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Theme switch ----------
+   The compact track-and-knob control, with the two modes named at either end
+   rather than inside the pill. The active end brightens; the knob sits on
+   that side. */
+.theme-control {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  flex: none;
+}
+
+.theme-end {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 9.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--c-muted);
+  transition: color .3s ease;
+  user-select: none;
+}
+
+[data-theme="day"] .theme-end[data-for="day"],
+[data-theme="night"] .theme-end[data-for="night"] { color: var(--c-cream); }
+
+.theme-switch {
+  flex: none;
+  position: relative;
+  width: 2.5rem;
+  height: 1.35rem;
+  padding: 0;
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .2s ease;
+}
+.theme-switch:hover { border-color: var(--c-accent); }
+
+.theme-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: .95rem;
+  height: .95rem;
+  border-radius: 999px;
+  background: var(--c-muted);
+  transition: transform .28s cubic-bezier(.2,.7,.2,1), background-color .28s ease;
+  transform: translateX(1.1rem);        /* night: knob to the right */
+}
+[data-theme="day"] .theme-switch::after {
+  transform: translateX(0);
+  background: var(--c-cream);
+}
+.theme-switch:hover::after { background: var(--c-accent); }
+
+/* Between 768px and 1024px the nav, wordmark and switch together exceed the
+   header; the two words are the least essential part, so they go first. */
+@media (max-width: 64rem) { .theme-end { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch, .theme-switch::after, .theme-end { transition: none; }
+}
+
+/* Tablet header: nine nav items need tighter pills to fit beside the
+   wordmark and the switch. */
+@media (min-width: 48rem) and (max-width: 64rem) {
+  .nav-link { padding: .35rem .5rem; font-size: .85rem; }
+}
+
+/* ---------- Mobile navigation ----------
+   Below 1024px the header has no room for nine links, so they move into a
+   panel that slides in from the right. CSS handles the motion: one transform
+   and one fade is what transitions are for, and it keeps the page free of an
+   animation library. */
+.menu-btn {
+  flex: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-left: .25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color .2s ease;
+}
+.menu-btn:hover { border-color: var(--c-accent); }
+
+.menu-btn-lines { display: block; width: 1rem; height: .7rem; position: relative; }
+.menu-btn-lines i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--c-cream);
+  border-radius: 2px;
+  transition: transform .3s cubic-bezier(.2,.7,.2,1), opacity .2s ease;
+}
+.menu-btn-lines i:nth-child(1) { top: 0; }
+.menu-btn-lines i:nth-child(2) { top: 50%; margin-top: -.75px; }
+.menu-btn-lines i:nth-child(3) { bottom: 0; }
+
+/* Open: the outer lines meet and cross, the middle one fades. */
+.menu-btn[aria-expanded="true"] .menu-btn-lines i:nth-child(1) { transform: translateY(.34rem) rotate(45deg); }
+.menu-btn[aria-expanded="true"] .menu-btn-lines i:nth-child(2) { opacity: 0; }
+.menu-btn[aria-expanded="true"] .menu-btn-lines i:nth-child(3) { transform: translateY(-.34rem) rotate(-45deg); }
+
+.mobile-nav-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--c-ink);
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+.mobile-nav-scrim[data-open="true"] { opacity: .72; }
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70;
+  width: min(21rem, 86vw);
+  background: var(--c-surface);
+  border-left: 1px solid var(--c-line);
+  transform: translateX(100%);
+  transition: transform .42s cubic-bezier(.2,.7,.2,1);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.mobile-nav[data-open="true"] { transform: translateX(0); }
+
+.mobile-nav-inner { padding: 5.5rem 1.75rem 2.5rem; }
+
+.mobile-nav-list { list-style: none; margin: 0; padding: 0; }
+.mobile-nav-list li { border-top: 1px solid var(--c-line); }
+.mobile-nav-list li:last-child { border-bottom: 1px solid var(--c-line); }
+
+.mobile-nav-list a {
+  display: block;
+  padding: .85rem 0;
+  color: var(--c-cream);
+  text-decoration: none;
+  font-size: 1.15rem;
+  text-align: left;
+  hyphens: none;
+}
+.mobile-nav-list a span {
+  display: block;
+  margin-top: .15rem;
+  font-size: .78rem;
+  color: var(--c-muted);
+}
+.mobile-nav-list a:hover,
+.mobile-nav-list a:focus-visible { color: var(--c-accent); }
+
+.mobile-nav-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  margin-top: 2rem;
+}
+.mobile-nav-foot a {
+  font-family: 'Special Elite', 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  text-decoration: none;
+}
+.mobile-nav-foot a:hover { color: var(--c-accent); }
+
+/* The panel is for small screens only; it is removed outright above 1024px so
+   its markup can never trap focus on desktop. */
+@media (min-width: 64rem) {
+  .mobile-nav, .mobile-nav-scrim, .menu-btn { display: none !important; }
+}
+
+body[data-nav-open="true"] { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav, .mobile-nav-scrim, .menu-btn-lines i { transition: none; }
+}

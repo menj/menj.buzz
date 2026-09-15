@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{{site.title}}</title>
+<meta name="description" content="{{site.description}}" />
+<link rel="canonical" href="{{site.canonical}}" />
+<meta name="author" content="{{person.name}}" />
+<meta name="theme-color" content="{{site.themeColorNight}}" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="{{site.themeColorDay}}" media="(prefers-color-scheme: light)" />
+
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="{{site.siteName}}" />
+<meta property="og:title" content="{{site.title}}" />
+<meta property="og:description" content="{{site.socialDescription}}" />
+<meta property="og:url" content="{{site.canonical}}" />
+<meta property="og:locale" content="{{site.locale}}" />
+<meta property="og:image" content="{{absoluteOgImage}}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{person.name}}" />
+<meta property="profile:first_name" content="{{person.firstName}}" />
+<meta property="profile:last_name" content="{{person.lastName}}" />
+<meta property="profile:username" content="{{person.username}}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{site.title}}" />
+<meta name="twitter:description" content="{{site.socialDescription}}" />
+<meta name="twitter:image" content="{{absoluteOgImage}}" />
+
+{{{discoveryLinks}}}
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="site.webmanifest" />
+
+<link rel="preload" href="assets/fonts/sabon-next-lt-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="assets/tailwind.css">
+
+<link rel="stylesheet" href="assets/site.css">
+
+<!-- Anti-flash: resolve the theme before first paint, ahead of the
+     behaviour script at the foot of the document. -->
+<script>
+(function(){try{var t=localStorage.getItem('menj-theme');if(t!=='day'&&t!=='night'){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches?'day':'night';}document.documentElement.dataset.theme=t;}catch(e){}})();
+</script>
+
+<!-- Entity graph. The sameAs array consolidates every profile listed under
+     "Elsewhere" into a single machine-readable identity claim. -->
+<script type="application/ld+json">
+{{{jsonld}}}
+</script>
+</head>
+<body class="font-sans antialiased">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<header class="site-header sticky top-0 z-50 backdrop-blur-md">
+  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="#top" class="block text-cream hover:text-accent transition-colors">
+      {{{wordmarkSvg}}}
+    </a>
+    <div class="hidden lg:flex items-center gap-1">
+      {{#each nav}}<a href="{{href}}" class="nav-link" data-tip="{{tip}}"><span>{{label}}</span></a>
+      {{/each}}</div>
+    <button id="menuBtn" class="menu-btn lg:hidden" type="button"
+      aria-expanded="false" aria-controls="mobileNav" aria-label="Open the menu">
+      <span class="menu-btn-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+
+    <span class="theme-control">
+      <span class="theme-end" data-for="day">Day</span>
+      <button id="themeBtn" type="button" role="switch" aria-checked="false"
+        aria-label="Switch between day and night themes" class="theme-switch"></button>
+      <span class="theme-end" data-for="night">Night</span>
+    </span>
+  </nav>
+</header>
+
+<div id="mobileNavScrim" class="mobile-nav-scrim" hidden></div>
+
+<nav id="mobileNav" class="mobile-nav" aria-label="Sections" hidden>
+  <div class="mobile-nav-inner">
+    <p class="font-mono text-[10px] uppercase tracking-[0.28em] text-accent mb-6">Sections</p>
+    <ul class="mobile-nav-list">
+      {{#each nav}}<li><a href="{{href}}">{{label}}<span>{{tip}}</span></a></li>
+      {{/each}}</ul>
+
+    <div class="mobile-nav-foot">
+      <a href="{{instagram.profileUrl}}" target="_blank" rel="noopener">Instagram</a>
+      <a href="{{flickr.profileUrl}}" target="_blank" rel="noopener">Flickr</a>
+      <a href="https://menj.bio" target="_blank" rel="noopener">Archive</a>
+    </div>
+  </div>
+</nav>
+
+
+<nav class="contents font-mono" aria-label="Contents">
+  <p>Contents</p>
+  <ul class="font-sans">
+    {{#each nav}}<li><a href="{{href}}">{{label}}</a></li>
+    {{/each}}</ul>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative overflow-hidden">
+  <div class="blob absolute -top-32 -left-24 w-[34rem] h-[34rem] rounded-full" aria-hidden="true"></div>
+  <div class="blob absolute top-40 right-[-10rem] w-[26rem] h-[26rem] rounded-full" aria-hidden="true" style="--c-accent:var(--c-accent2)"></div>
+
+  <div class="relative mx-auto max-w-6xl px-5 sm:px-8 pt-20 sm:pt-28 pb-16">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-start">
+
+      <div class="lg:col-span-7 reveal">
+        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-muted mb-6">
+          {{hero.eyebrow}}
+        </p>
+        <h1 class="font-display font-light leading-[0.95] text-[2.6rem] sm:text-6xl lg:text-[4.4rem]">
+          {{hero.nameFirst}}<br class="hidden sm:block"> {{hero.nameSecond}} <span class="italic text-accent ml-[0.12em]">{{hero.nameAccent}}</span>
+        </h1>
+        <p class="mt-7 max-w-xl text-lg sm:text-xl leading-relaxed prose-body">
+          {{hero.lede}}
+        </p>
+        <p class="mt-4 max-w-xl font-display italic text-[15px] text-muted">
+          {{hero.tagline}}
+        </p>
+
+        <div class="mt-9 flex flex-wrap gap-3">
+          {{#each hero.buttons}}{{#if primary}}<a href="{{url}}" target="_blank" rel="noopener"
+             class="group inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium text-ink"
+             style="background:var(--c-accent)">
+            {{label}}
+            <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+          </a>{{else}}<a href="{{url}}" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm border border-line text-cream hover:border-accent hover:text-accent transition-colors">
+            {{label}}
+          </a>{{/if}}
+          {{/each}}        </div>
+      </div>
+
+      <!-- identity card -->
+      <div class="lg:col-span-5 reveal">
+        <div class="card rounded-3xl p-6 sm:p-8">
+          <div class="flex items-center justify-between mb-8">
+            <picture>
+                <source srcset="{{person.imageAvif}}" type="image/avif">
+                <source srcset="{{person.imageWebp}}" type="image/webp">
+                <img class="portrait w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover"
+                     src="{{person.image}}" width="440" height="440" decoding="async"
+                     alt="{{person.imageAlt}}" />
+              </picture>
+            <span class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">also known as<br>
+              <span class="text-accent2 normal-case tracking-normal">{{hero.aka}}</span>
+            </span>
+          </div>
+
+          <dl class="space-y-4 text-sm">
+            {{#each db.facts}}<div class="flex justify-between gap-6{{#if @last}}{{else}} pb-4 hairline-b{{/if}}">
+              <dt class="text-muted font-mono text-[11px] uppercase tracking-widest pt-[3px]">{{label}}</dt>
+              <dd class="text-right prose-body">{{{value}}}</dd>
+            </div>
+            {{/each}}</dl>
+        </div>
+        <p class="mt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-muted text-right">
+          {{hero.cardNote}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- marquee -->
+  <div class="marquee-wrap relative py-5 overflow-hidden">
+    <button id="marqueeBtn" type="button" aria-pressed="false" aria-label="Pause or play the scrolling banner"
+      class="marquee-toggle font-mono text-[10px] uppercase tracking-[0.18em] px-2.5 py-1.5 rounded-full border border-line text-muted hover:text-cream hover:border-accent transition-colors"
+      style="background:var(--c-ink)">Pause</button>
+    <div class="marquee gap-8 font-mono text-[11px] uppercase tracking-[0.24em] text-muted" data-paused="false">
+      <span class="flex gap-8 shrink-0">
+        {{#each db.marquee}}<span>{{.}}</span><span class="text-accent">&#10022;</span>
+        {{/each}}</span>
+      <span class="flex gap-8 shrink-0" aria-hidden="true">
+        {{#each db.marquee}}<span>{{.}}</span><span class="text-accent">&#10022;</span>
+        {{/each}}</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-3 reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">{{about.eyebrow}}</p>
+    </div>
+    <div class="lg:col-span-9 reveal">
+      <p class="font-display text-2xl sm:text-[2.2rem] leading-[1.3] font-light">
+        {{{about.standfirst}}}
+      </p>
+
+      <div class="about-body mt-10 space-y-6 text-[17px] sm:text-[18px] leading-[1.7] prose-body">
+        {{#each about.paragraphs}}<p>{{{.}}}</p>
+        {{/each}}</div>
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rule"></div></div>
+
+<!-- ============ WHAT I DO ============ -->
+<section id="services" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="reveal mb-12">
+    <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{services.eyebrow}}</p>
+    <h2 class="font-display text-3xl sm:text-5xl font-light">{{services.heading}}</h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 gap-5">
+    {{#each db.services}}<article class="card rounded-3xl p-7 sm:p-8 reveal">
+      <span class="font-mono text-[11px] uppercase tracking-[0.2em] text-accent">{{kicker}}</span>
+      <h3 class="font-display text-xl mb-3 mt-6">{{title}}</h3>
+      <p class="text-[14.5px] leading-relaxed prose-soft">{{{body}}}</p>
+    </article>
+    {{/each}}</div>
+</section>
+
+<div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rule"></div></div>
+
+<!-- ============ BOOKS ============ -->
+<section id="books" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-3 reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{books.eyebrow}}</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{books.heading}}</h2>
+      <p class="mt-5 text-sm leading-relaxed text-muted max-w-xs">{{books.intro}}</p>
+    </div>
+
+    <div class="lg:col-span-9">
+      <ul class="space-y-0">
+        {{#each db.books}}<li class="reveal grid grid-cols-[4.5rem_1fr] sm:grid-cols-[6rem_1fr] gap-4 py-6 hairline{{#if @last}} hairline-b{{/if}}">
+          <span class="font-mono text-[11px] text-muted pt-1">{{year}}</span>
+          <div>
+            <h3 class="font-display text-lg sm:text-xl">{{title}}</h3>
+            <p class="text-sm text-muted mt-1">{{{note}}}</p>
+          </div>
+        </li>
+        {{/each}}</ul>
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rule"></div></div>
+
+<!-- ============ WRITING ============ -->
+<section id="writing" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-3 reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{writing.eyebrow}}</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{writing.heading}}</h2>
+      <p class="mt-5 text-sm leading-relaxed text-muted max-w-xs">{{{writing.intro}}}</p>
+    </div>
+
+    <div class="lg:col-span-9">
+      <ul class="space-y-0" id="postList"></ul>
+      <p id="feedNotice" class="text-sm text-muted" hidden>{{{writing.failure}}}</p>
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rule"></div></div>
+
+<!-- ============ PRESS ============ -->
+<section id="press" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-3 reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{press.eyebrow}}</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{press.heading}}</h2>
+      <p class="mt-5 text-sm leading-relaxed text-muted max-w-xs">{{press.intro}}</p>
+      <p class="mt-6">
+        <a href="press/" class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted hover:text-accent transition-colors">{{press.archiveLabel}}</a>
+      </p>
+    </div>
+
+    <div class="lg:col-span-9">
+      {{#if releases}}<ul class="space-y-0">
+        {{#each releases}}<li class="reveal grid grid-cols-[4.5rem_1fr] sm:grid-cols-[6rem_1fr] gap-4 py-6 hairline{{#if @last}} hairline-b{{/if}}">
+          <span class="font-mono text-[11px] text-muted pt-1">{{displayDate}}</span>
+          <div>
+            <h3 class="font-display text-lg sm:text-xl">
+              <a href="press/{{slug}}/" class="link-u hover:text-accent transition-colors">{{headline}}</a>
+            </h3>
+            <p class="text-sm text-muted mt-1">{{summary}}</p>
+          </div>
+        </li>
+        {{/each}}</ul>{{else}}<p class="text-sm text-muted">{{press.empty}}</p>{{/if}}
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rule"></div></div>
+
+<!-- ============ CODE ============ -->
+<section id="code" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="reveal mb-12 flex flex-wrap items-end justify-between gap-6">
+    <div>
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{code.eyebrow}}</p>
+      <h2 class="font-display text-3xl sm:text-5xl font-light">{{code.heading}}</h2>
+    </div>
+    <a href="{{code.linkUrl}}" target="_blank" rel="noopener"
+       class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted hover:text-accent transition-colors">{{code.linkLabel}}</a>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    {{#each db.repos}}<a href="{{url}}" target="_blank" rel="noopener" class="card rounded-3xl p-6 reveal block">
+      <h3 class="font-mono text-sm text-accent mb-3">{{name}}</h3>
+      <p class="text-[14px] leading-relaxed prose-soft">{{{body}}}</p>
+    </a>
+    {{/each}}</div>
+</section>
+
+<div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rule"></div></div>
+
+<!-- ============ PHOTOGRAPHS ============ -->
+<section id="photographs" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-3 reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{photographs.eyebrow}}</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{photographs.heading}}</h2>
+      <p class="mt-5 text-sm leading-relaxed text-muted max-w-xs">{{photographs.intro}}</p>
+    </div>
+
+    <div class="lg:col-span-9 reveal">
+      {{#if gallery.tiles}}<ul class="photo-row">
+        {{#each gallery.tiles}}<li>
+          <a href="{{url}}" target="_blank" rel="noopener" title="{{caption}}">
+            <picture>
+              <source srcset="{{imageAvif}}" type="image/avif">
+              <source srcset="{{imageWebp}}" type="image/webp">
+              <img src="{{image}}" alt="{{caption}}" loading="lazy" decoding="async" width="480" height="480" />
+            </picture>
+          </a>
+        </li>
+        {{/each}}</ul>{{else}}<p class="text-sm text-muted">{{photographs.empty}}</p>{{/if}}
+
+      <p class="mt-5 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+        <a href="{{instagram.profileUrl}}" target="_blank" rel="noopener" class="link-u hover:text-accent transition-colors">Instagram</a>
+        <span class="mx-2" aria-hidden="true">·</span>
+        <a href="{{flickr.profileUrl}}" target="_blank" rel="noopener" class="link-u hover:text-accent transition-colors">Flickr</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rule"></div></div>
+
+<!-- ============ ARCHIVE ============ -->
+<section id="archive" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4 reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{archive.eyebrow}}</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{archive.heading}}</h2>
+      <p class="mt-6 text-sm leading-relaxed text-muted max-w-sm">{{{archive.intro}}}</p>
+      <p class="mt-7">
+        <a href="https://menj.bio" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm border border-line text-cream hover:border-accent hover:text-accent transition-colors">
+          {{archive.cta}} <span aria-hidden="true">&rarr;</span>
+        </a>
+      </p>
+    </div>
+
+    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10">
+      {{#each db.archive}}<a href="{{url}}" target="_blank" rel="noopener" class="reveal flex items-baseline justify-between gap-4 py-4 group hairline">
+        <span class="text-cream group-hover:text-accent transition-colors">{{label}}</span>
+        <span class="text-[12px] text-muted text-right">{{note}}</span>
+      </a>
+      {{/each}}</div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-6xl px-5 sm:px-8"><div class="rule"></div></div>
+
+<!-- ============ ELSEWHERE ============ -->
+<section id="elsewhere" class="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-20">
+  <div class="grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4 reveal">
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{elsewhere.eyebrow}}</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{{elsewhere.heading}}}</h2>
+      <p class="mt-6 text-sm leading-relaxed text-muted max-w-sm">{{elsewhere.intro}}</p>
+    </div>
+
+    <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10">
+      {{#each db.elsewhere}}<a href="{{url}}" target="_blank" rel="noopener" class="reveal flex items-baseline justify-between gap-4 py-4 group hairline">
+        <span class="text-cream group-hover:text-accent transition-colors">{{label}}</span>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-muted">{{kind}}</span>
+      </a>
+      {{/each}}</div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="mx-auto max-w-6xl px-5 sm:px-8 pb-24">
+  <div class="card rounded-[2rem] p-8 sm:p-14 reveal relative overflow-hidden">
+    <div class="blob absolute -bottom-24 right-0 w-80 h-80 rounded-full" aria-hidden="true"></div>
+    <div class="relative">
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-5">{{cta.eyebrow}}</p>
+      <h2 class="font-display text-3xl sm:text-[2.75rem] leading-[1.15] font-light max-w-3xl">
+        {{{cta.heading}}}
+      </h2>
+      <div class="mt-9 flex flex-wrap gap-3">
+        {{#each cta.buttons}}{{#if primary}}<a href="{{url}}" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium text-ink" style="background:var(--c-accent)">
+          {{label}} <span aria-hidden="true">&rarr;</span>
+        </a>{{else}}<a href="{{url}}" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm border border-line text-cream hover:border-accent hover:text-accent transition-colors">
+          {{label}}
+        </a>{{/if}}
+        {{/each}}{{#if preferred.enabled}}<a href="https://www.google.com/preferences/source?q={{preferred.domain}}"
+           class="gpr-trigger inline-flex items-center gap-2.5 px-5 py-3 rounded-full text-sm border border-line text-cream hover:border-accent hover:text-accent transition-colors"
+           target="_blank" rel="noopener">
+          <svg class="gpr-glyph" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M12 2.5l2.6 6.3 6.9.5-5.2 4.4 1.6 6.6L12 16.8 6.1 20.3l1.6-6.6L2.5 9.3l6.9-.5z"/>
+          </svg>
+          {{preferred.label}}
+        </a>{{/if}}</div>
+      {{#if preferred.enabled}}<p class="mt-4 text-[12px] text-muted max-w-md">{{preferred.note}}</p>{{/if}}
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="mx-auto max-w-6xl px-5 sm:px-8 pb-14">
+  <div class="rule mb-8"></div>
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-sm">
+    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+      &copy; <span id="year">{{year}}</span> {{person.name}}
+    </p>
+    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{{footer.credit}} · {{footer.sitemapLabel}} <a href="sitemap/" class="link-u hover:text-accent transition-colors">{{footer.sitemapHtml}}</a><span class="text-muted" aria-hidden="true"> · </span><a href="sitemap.xml" class="link-u hover:text-accent transition-colors">{{footer.sitemapXml}}</a></p>
+    <button id="themeBtn2" type="button" aria-pressed="false"
+      class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted hover:text-accent transition-colors">
+      Switch to <span id="themeLabel2">day</span> <span aria-hidden="true">&#8634;</span>
+    </button>
+  </div>
+  <p class="mt-6 text-[11px] leading-relaxed text-muted max-w-2xl">{{footer.note}}</p>
+</footer>
+
+<script type="application/json" id="site-feed">
+{{{feedJSON}}}
+</script>
+
+{{#if preferred.enabled}}<script async preferred-sources-control="manual" src="https://news.google.com/swg/js/v1/publisher.js"></script>{{/if}}
+<script src="assets/site.js" defer></script>
+</body>
+</html>

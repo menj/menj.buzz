@@ -1,0 +1,21 @@
+{
+  "slug": "menj-buzz-launch",
+  "headline": "MENJ.BUZZ launches as a single entity hub",
+  "dateline": {
+    "city": "Kuala Lumpur",
+    "date": "2026-08-20"
+  },
+  "summary": "Mohd Elfie Nieshaem Juferi has consolidated his publishing, apologetics and development work behind a single address.",
+  "body": [
+    "The new site gathers a decade and a half of work across search, comparative religion, Malay literature and open-source development, and links every profile and property under one identity record.",
+    "The site is static, flat-file and dependency-free, with content maintained as JSON and rendered at build time."
+  ],
+  "boilerplate": "Mohd Elfie Nieshaem Juferi is an SEO specialist, Muslim apologist, publisher and developer based in Kuala Lumpur.",
+  "contact": {
+    "name": "Mohd Elfie Nieshaem Juferi",
+    "url": "https://menj.buzz/"
+  },
+  "tags": [
+    "announcement"
+  ]
+}

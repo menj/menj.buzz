@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+
+# Instagram long-lived token — rewritten by every build, never commit
+data/secrets.instagram.json

@@ -1,0 +1,21 @@
+{
+  "name": "MENJ.BUZZ",
+  "short_name": "MENJ",
+  "description": "Mohd Elfie Nieshaem Juferi \u2014 writer, Muslim apologist, SEO specialist and developer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a10",
+  "theme_color": "#0a0a10",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/mohd-elfie-nieshaem-juferi-portrait.png",
+      "sizes": "440x440",
+      "type": "image/png"
+    }
+  ]
+}

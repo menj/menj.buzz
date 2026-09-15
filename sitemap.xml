@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://menj.buzz/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://menj.buzz/assets/img/mohd-elfie-nieshaem-juferi-portrait.png</image:loc>
+      <image:title>Mohd Elfie Nieshaem Juferi</image:title>
+      <image:caption>Mohd Elfie Nieshaem Juferi, SEO specialist and publisher, Kuala Lumpur</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://menj.buzz/assets/img/mohd-elfie-nieshaem-juferi-card.png</image:loc>
+      <image:title>Mohd Elfie Nieshaem Juferi</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://menj.buzz/sitemap/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://menj.buzz/press/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://menj.buzz/press/langgam-fikir-paulus-third-edition/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://menj.buzz/press/menj-buzz-launch/</loc>
+    <lastmod>2026-08-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

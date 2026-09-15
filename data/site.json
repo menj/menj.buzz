@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "lang": "en",
+    "siteName": "MENJ.BUZZ",
+    "canonical": "https://menj.buzz/",
+    "title": "Mohd Elfie Nieshaem Juferi — writer, apologist, developer",
+    "description": "Writer, Muslim apologist, SEO specialist and developer. SEO by day, apologetics by night. Start at menj.blog.",
+    "socialDescription": "Writer, Muslim apologist, SEO specialist and developer. SEO by day, apologetics by night.",
+    "ogImage": "assets/img/mohd-elfie-nieshaem-juferi-card.png",
+    "locale": "en_MY",
+    "themeColorNight": "#0a0a10",
+    "themeColorDay": "#f6f2ea"
+  },
+  "person": {
+    "name": "Mohd Elfie Nieshaem Juferi",
+    "firstName": "Mohd Elfie Nieshaem",
+    "lastName": "Juferi",
+    "username": "menj",
+    "alternateName": [
+      "MENJ",
+      "Ibn Juferi al-Amriki",
+      "Ibn Juferi"
+    ],
+    "image": "assets/img/mohd-elfie-nieshaem-juferi-portrait.png",
+    "jobTitle": "SEO Specialist",
+    "city": "Kuala Lumpur",
+    "country": "MY",
+    "alumniOf": "Asia Pacific Institute of Information Technology",
+    "knowsAbout": [
+      "Search engine optimisation",
+      "Comparative religion",
+      "Islamic apologetics",
+      "Malay literature",
+      "WordPress development"
+    ],
+    "knowsLanguage": [
+      "en",
+      "ms"
+    ],
+    "sameAs": [
+      "https://menj.blog",
+      "https://menj.me",
+      "https://menj.bio",
+      "https://bismikaallahuma.org",
+      "https://github.com/menj",
+      "https://huggingface.co/menj1980",
+      "https://www.linkedin.com/in/mohd-elfie-nieshaem-bin-juferi",
+      "https://openlibrary.org/authors/OL15937447A/Mohd_Elfie_Nieshaem_Juferi",
+      "https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi",
+      "https://ms.wikipedia.org/wiki/Mohd_Elfie_Nieshaem_Juferi",
+      "https://www.flickr.com/photos/menj/",
+      "https://www.instagram.com/mohdelfienieshaem.juferi/"
+    ],
+    "imageAlt": "Mohd Elfie Nieshaem Juferi, SEO specialist and publisher, Kuala Lumpur",
+    "workDescription": "In-house SEO for a Europe-based digital marketing agency, working remotely",
+    "imageAvif": "assets/img/mohd-elfie-nieshaem-juferi-portrait.avif",
+    "imageWebp": "assets/img/mohd-elfie-nieshaem-juferi-portrait.webp"
+  },
+  "feed": {
+    "endpoint": "https://menj.blog/wp-json/wp/v2/posts",
+    "site": "menj.blog",
+    "count": 3,
+    "cacheMinutes": 30
+  },
+  "preferredSource": {
+    "enabled": true,
+    "domain": "menj.buzz",
+    "label": "Add as a preferred source on Google",
+    "shortLabel": "Prefer on Google",
+    "note": "Google shows preferred sources higher in Top stories for people who add them."
+  },
+  "flickr": {
+    "enabled": true,
+    "nsid": "37664438@N00",
+    "handle": "menj",
+    "profileUrl": "https://www.flickr.com/photos/menj/",
+    "count": 8,
+    "tags": ""
+  }
+}

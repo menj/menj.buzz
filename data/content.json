@@ -1,0 +1,157 @@
+{
+  "nav": [
+    {
+      "label": "About",
+      "href": "#about",
+      "tip": "Who I am and how I got here"
+    },
+    {
+      "label": "What I do",
+      "href": "#services",
+      "tip": "Search, apologetics, publishing, code"
+    },
+    {
+      "label": "Books",
+      "href": "#books",
+      "tip": "Five titles, newest first"
+    },
+    {
+      "label": "Writing",
+      "href": "#writing",
+      "tip": "Latest posts from menj.blog"
+    },
+    {
+      "label": "Press",
+      "href": "#press",
+      "tip": "Announcements and media contact"
+    },
+    {
+      "label": "Code",
+      "href": "#code",
+      "tip": "WordPress plugins and web tools"
+    },
+    {
+      "label": "Images",
+      "href": "#photographs",
+      "tip": "Recent images from Flickr and Instagram"
+    },
+    {
+      "label": "Archive",
+      "href": "#archive",
+      "tip": "The documented record at menj.bio"
+    },
+    {
+      "label": "Elsewhere",
+      "href": "#elsewhere",
+      "tip": "Every profile and property"
+    }
+  ],
+  "wordmark": {
+    "accent": "menj",
+    "muted": ".buzz"
+  },
+  "hero": {
+    "eyebrow": "Born In the USA · Raised in Penang · Based in Kuala Lumpur · Publishing since 1995",
+    "nameFirst": "Mohd Elfie",
+    "nameSecond": "Nieshaem",
+    "nameAccent": "Juferi",
+    "lede": "A writer, apologist, SEO specialist and developer, working on scholarly resources for Muslim apologetics and building tools that keep the web open and honest.",
+    "tagline": "SEO specialist by day, Muslim apologist by night.",
+    "aka": "Ibn Juferi al-Amriki",
+    "cardNote": "details drawn from public sources",
+    "buttons": [
+      {
+        "label": "Read the blog",
+        "url": "https://menj.blog",
+        "primary": true
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/menj"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/mohd-elfie-nieshaem-bin-juferi"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "standfirst": "Born in San José, California and raised in Penang, I have spent the last three decades oscillating between two disciplines that look nothing alike on paper: ==search engines== and ==scripture==.",
+    "paragraphs": [
+      "I studied Computing with a specialism in Internet Technologies at the Asia Pacific Institute of Information Technology, after sitting my NSW-HSC at International College, Penang. I went straight into the web, running my own boutique SEO sub-contracting agency from 2006 until 2015. I now work in-house as an SEO specialist for a digital marketing agency based in Europe, remotely from Kuala Lumpur.",
+      "Since 1999 the rest of my attention has gone to the study of comparative religion, covering Judaism, Christianity and Islam, under the pen name *Ibn Juferi al-Amriki*. I am a co-founder and executive editor of *Bismika Allahuma*, a long-running archive of Muslim responses to anti-Islam polemics.",
+      "Creative writing came first. I have been published since 1995 in *Dewan Sastera*, *Dewan Siswa*, *Pelita Bahasa* and *Karya*, and won the Hadiah Sastera Siswa Bank Rakyat poetry prize twice, in 1997 and again in 1998/99, after taking part in Dewan Bahasa dan Pustaka's Minggu Penulis Remaja mentorship in 1996.",
+      "Off the clock: Total War: Warhammer, Liverpool FC and Selangor FA, a growing interest in photography, and an unshakeable loyalty to Penang's nasi kandar and pasembur."
+    ]
+  },
+  "services": {
+    "eyebrow": "What I do",
+    "heading": "Four desks, one person."
+  },
+  "books": {
+    "eyebrow": "Books",
+    "heading": "A shelf, in order.",
+    "intro": "Non-fiction on comparative religion, and one collection of twenty years of poems. A new manuscript on Paul of Tarsus is in final draft."
+  },
+  "writing": {
+    "eyebrow": "Writing",
+    "heading": "Lately, on the blog.",
+    "intro": "The latest posts, pulled live from [menj.blog](https://menj.blog).",
+    "failure": "The feed could not be reached. [Read the blog directly](https://menj.blog)."
+  },
+  "code": {
+    "eyebrow": "Code",
+    "heading": "Small tools, released.",
+    "linkLabel": "Browse all repositories on GitHub",
+    "linkUrl": "https://github.com/menj"
+  },
+  "elsewhere": {
+    "eyebrow": "Elsewhere",
+    "heading": "Everywhere I keep<br>a doorway.",
+    "intro": "Comments, suggestions, corrections or speaking invitations are all welcome. The quickest route is a message on any of these."
+  },
+  "cta": {
+    "eyebrow": "Currently",
+    "heading": "Finishing a manuscript on Paul of Tarsus, getting ==Langgam Fikir=='s first titles into print, and quietly making the web a little more honest.",
+    "buttons": [
+      {
+        "label": "Start at menj.blog",
+        "url": "https://menj.blog",
+        "primary": true
+      },
+      {
+        "label": "Get in touch",
+        "url": "https://menj.me"
+      }
+    ]
+  },
+  "footer": {
+    "credit": "Set in Sabon Next LT, EB Garamond & Special Elite",
+    "note": "Biographical details, titles and repository descriptions on this page were compiled from public sources as of September 2026. Corrections are welcome.",
+    "sitemapLabel": "Sitemap",
+    "sitemapHtml": "HTML",
+    "sitemapXml": "XML"
+  },
+  "press": {
+    "eyebrow": "Press",
+    "heading": "For the record.",
+    "intro": "Announcements from the imprint and the practice. Each release carries its own page, contact and structured data.",
+    "archiveLabel": "All releases",
+    "empty": "No releases yet."
+  },
+  "archive": {
+    "eyebrow": "Archive",
+    "heading": "The long record.",
+    "intro": "Everything documented, held at [menj.bio](https://menj.bio): works, qualifications, records, media and sources, with an authority record that this site takes its identifiers from.",
+    "cta": "Open the archive"
+  },
+  "photographs": {
+    "eyebrow": "Images",
+    "heading": "Seen along the way.",
+    "intro": "A growing interest, kept on Flickr and Instagram.",
+    "flickrLabel": "From Flickr",
+    "instagramLabel": "From Instagram",
+    "empty": "No photographs to show yet."
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://menj.bio",
+      "name": "Mohd Elfie Nieshaem Juferi",
+      "url": "https://menj.blog",
+      "description": "Mohd Elfie Nieshaem Juferi, also known as MENJ and Ibn Juferi, is a Malaysian writer, poet, independent researcher, publisher, SEO specialist and web developer.",
+      "jobTitle": "Writer, poet, independent researcher, publisher",
+      "alternateName": [
+        "MENJ",
+        "Elfie Juferi",
+        "Ibn Juferi"
+      ],
+      "alumniOf": [
+        "APIIT"
+      ],
+      "affiliation": [
+        {
+          "@id": "https://menj.bio/#langgam-fikir"
+        }
+      ],
+      "sameAs": [
+        "https://menj.blog/",
+        "https://www.wikidata.org/wiki/Q136687746",
+        "https://viaf.org/en/viaf/368178463286535070801",
+        "https://ms.wikipedia.org/wiki/Mohd_Elfie_Nieshaem_Juferi",
+        "https://www.acronymfinder.com/Mohd-Elfie-Nieshaem-Juferi-(Islamic-scholar)-(MENJ).html",
+        "https://scholar.google.com/citations?hl=en&user=hacGY18AAAAJ",
+        "https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi",
+        "https://www.linkedin.com/in/mohd-elfie-nieshaem-bin-juferi/",
+        "https://github.com/menj",
+        "https://play.google.com/store/info/name/Mohd_Elfie_Nieshaem_Juferi?id=11nnv7kvb9",
+        "https://gravatar.com/menj",
+        "https://www.facebook.com/mohd.elfie.nieshaem.bin.juferi/",
+        "https://www.instagram.com/mohdelfienieshaem.juferi/",
+        "https://www.flickr.com/photos/menj/",
+        "https://www.quora.com/profile/Mohd-Elfie-Nieshaem-Juferi",
+        "https://suno.com/@menj"
+      ],
+      "email": "contact@menj.org",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@menj.org",
+        "availableLanguage": "en"
+      },
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Meet Mohd Elfie Nieshaem Juferi",
+          "value": "https://menj.blog"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Relationship to this site",
+          "value": "Mohd Elfie Nieshaem Juferi is the subject of this document library, Biography: Mohd Elfie Nieshaem Juferi."
+        }
+      ],
+      "knowsAbout": [
+        "Anthology",
+        "Apologetics",
+        "Education, Primary",
+        "Education, Secondary",
+        "Education, Tertiary",
+        "FL",
+        "Identity",
+        "Language & Literature",
+        "Magazine",
+        "Polemics",
+        "Puisi",
+        "Refutations",
+        "Soundtrack",
+        "Speech"
+      ],
+      "subjectOf": {
+        "@type": "ProfilePage",
+        "url": "https://menj.bio/about/",
+        "name": "About Mohd Elfie Nieshaem Juferi"
+      },
+      "mainEntityOfPage": "https://menj.bio/about/",
+      "honorificPrefix": "Mr.",
+      "givenName": "Mohd Elfie Nieshaem",
+      "familyName": "Juferi",
+      "birthDate": "1980-02",
+      "birthPlace": {
+        "@type": "Place",
+        "name": "San Jose, CA"
+      },
+      "gender": "Male",
+      "nationality": [
+        "American",
+        "Malaysian"
+      ],
+      "pronouns": "he/him",
+      "knowsLanguage": [
+        "Malay",
+        "English",
+        "Chinese"
+      ],
+      "award": "Hadiah Sastera Siswa Bank Rakyat",
+      "spouse": {
+        "@type": "Person",
+        "name": "Mazuin Osman"
+      },
+      "children": {
+        "@type": "Person",
+        "name": "Mu'awiyah Rayyan Nieshaem"
+      },
+      "parent": [
+        {
+          "@type": "Person",
+          "name": "Juferi bin Kasman"
+        },
+        {
+          "@type": "Person",
+          "name": "Radziah binti Mohamed"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://menj.bio/#website",
+      "name": "Biography: Mohd Elfie Nieshaem Juferi",
+      "url": "https://menj.bio/",
+      "inLanguage": "en",
+      "description": "Mohd Elfie Nieshaem Juferi is a Malaysian poet and author. Explore his biography, works, research and archive today.",
+      "about": {
+        "@id": "https://menj.bio"
+      },
+      "publisher": {
+        "@id": "https://menj.bio"
+      },
+      "subjectOf": [
+        {
+          "@type": "CreativeWork",
+          "url": "https://menj.bio/sitemap.xml"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://menj.bio/llms.txt"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://menj.bio/library.yaml"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://menj.bio/vcard.vcf"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://menj.bio/robots.txt"
+        }
+      ]
+    },
+    {
+      "@type": "Book",
+      "@id": "https://menj.bio/#polis-raja-di-malaysia-power-corruption-control-in-malaysia-s-police-force",
+      "name": "Polis Raja Di Malaysia: Power, Corruption & Control in Malaysia’s Police Force",
+      "author": {
+        "@id": "https://menj.bio"
+      },
+      "publisher": {
+        "@id": "https://menj.bio/#langgam-fikir"
+      },
+      "datePublished": "2026",
+      "inLanguage": "en",
+      "url": "https://langgamfikir.my/publications/polis-raja-di-malaysia/",
+      "isbn": "978-629-96135-3-4"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://menj.bio/#jahabersa",
+      "name": "Langgam Fikir",
+      "url": "https://langgamfikir.my"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://menj.bio/#perniagaan-jahabersa",
+      "name": "Perniagaan Jahabersa",
+      "url": "https://www.jahabersa.com.my/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://menj.bio/#langgam-fikir",
+      "name": "Langgam Fikir"
+    }
+  ],
+  "_specification": {
+    "url": "https://www.ai-visibility.org.uk/"
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "marquee": [
+    "Search Engine Optimisation",
+    "Comparative Religion",
+    "Poetry in Bahasa Melayu",
+    "WordPress Plugins",
+    "Independent Publishing",
+    "Open Web"
+  ],
+  "services": [
+    {
+      "kicker": "Search",
+      "title": "SEO and organic growth",
+      "body": "Nearly two decades of it. Technical audits, content strategy, local SEO and bespoke engagements for clients who care about compounding traffic rather than tricks that expire. Currently in-house at a European digital marketing agency, working remotely on client SEO."
+    },
+    {
+      "kicker": "Apologetics",
+      "title": "Comparative religion",
+      "body": "Co-founder and executive editor of **Bismika Allahuma: Muslim Responses To Anti-Islam Polemics**, plus a network of sister sites and a YouTube channel. Debates and dialogues with Christians, Jews, atheists and the occasional Hindu or Buddhist."
+    },
+    {
+      "kicker": "Letters",
+      "title": "Writing, editing and publishing",
+      "body": "Poetry and prose in Bahasa Melayu and English since 1995, five books to date, and, since 2025, **Langgam Fikir Enterprise**, an imprint in Seri Kembangan, Selangor that publishes my own titles in literature, history and religious discourse."
+    },
+    {
+      "kicker": "Code",
+      "title": "Tools for the open web",
+      "body": "WordPress plugins and web utilities that solve unglamorous problems well: clean citations, structured data, readable long-form posts, typography that behaves. All of it public on GitHub."
+    }
+  ],
+  "books": [
+    {
+      "year": "2025",
+      "title": "Dua Dasawarsa: Sebuah Kumpulan Puisi 2005–2025",
+      "note": "Two decades of poems, gathered: the ideas and events that shaped the thinking.",
+      "inLanguage": "ms",
+      "genre": "Poetry",
+      "publisher": "Langgam Fikir Enterprise",
+      "datePublished": "2025"
+    },
+    {
+      "year": "2025",
+      "title": "Paulus: Perosak Risalah al-Masīḥ",
+      "note": "On Paul of Tarsus and the effects of his teachings. An English companion volume, *The Apostle of Doom*, is being developed in tandem.",
+      "inLanguage": "ms",
+      "genre": "Comparative religion",
+      "publisher": "Langgam Fikir Enterprise",
+      "datePublished": "2025"
+    },
+    {
+      "year": "2006",
+      "title": "When Apostates Become Shaykhs…",
+      "note": "Comparative religion · Jahabersa.",
+      "inLanguage": "en",
+      "genre": "Comparative religion",
+      "publisher": "Jahabersa",
+      "datePublished": "2006"
+    },
+    {
+      "year": "2005",
+      "title": "Buddhism: A Muslim Primer",
+      "note": "An introduction for Muslim readers · Jahabersa.",
+      "inLanguage": "en",
+      "genre": "Comparative religion",
+      "publisher": "Jahabersa",
+      "datePublished": "2005"
+    }
+  ],
+  "repos": [
+    {
+      "name": "citepress",
+      "url": "https://github.com/menj/citepress",
+      "body": "Academic citation plugin for WordPress with BibTeX, RIS, EndNote, CSL-JSON, CFF and Dublin Core export, plus JSON-LD structured data and analytics.",
+      "programmingLanguage": "PHP",
+      "applicationCategory": "DeveloperApplication"
+    },
+    {
+      "name": "abstract-box",
+      "url": "https://github.com/menj/abstract-box",
+      "body": "Adds a modernist “Abstract Box” section to posts via shortcode, with schema.org JSON-LD and a Gutenberg block.",
+      "programmingLanguage": "PHP",
+      "applicationCategory": "DeveloperApplication"
+    },
+    {
+      "name": "book-wp",
+      "url": "https://github.com/menj/book-wp",
+      "body": "A modernised build of the Book-WP theme, refreshed to present standards and expanded, with a legacy branch kept alive for older sites.",
+      "programmingLanguage": "PHP",
+      "applicationCategory": "DeveloperApplication"
+    },
+    {
+      "name": "auto-justify-content",
+      "url": "https://github.com/menj/auto-justify-content",
+      "body": "Justifies text across posts, pages and Elementor content, with optional hyphenation and responsive controls.",
+      "programmingLanguage": "PHP",
+      "applicationCategory": "DeveloperApplication"
+    },
+    {
+      "name": "citation-helper",
+      "url": "https://github.com/menj/citation-helper",
+      "body": "An APA citation helper website, deliberately ad-free.",
+      "programmingLanguage": "JavaScript",
+      "applicationCategory": "DeveloperApplication"
+    },
+    {
+      "name": "book-wp-legacy",
+      "url": "https://github.com/menj/book-wp-legacy",
+      "body": "The original Book-WP theme, patched for current WordPress versions. No new features, just survival.",
+      "programmingLanguage": "PHP",
+      "applicationCategory": "DeveloperApplication"
+    }
+  ],
+  "elsewhere": [
+    {
+      "label": "menj.blog",
+      "url": "https://menj.blog",
+      "kind": "Writing"
+    },
+    {
+      "label": "menj.bio",
+      "url": "https://menj.bio",
+      "kind": "Archive"
+    },
+    {
+      "label": "Bismika Allahuma",
+      "url": "https://bismikaallahuma.org",
+      "kind": "Apologetics"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/menj",
+      "kind": "@menj"
+    },
+    {
+      "label": "Hugging Face",
+      "url": "https://huggingface.co/menj1980",
+      "kind": "@menj1980"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mohd-elfie-nieshaem-bin-juferi",
+      "kind": "Professional"
+    },
+    {
+      "label": "Open Library",
+      "url": "https://openlibrary.org/authors/OL15937447A/Mohd_Elfie_Nieshaem_Juferi",
+      "kind": "Author page"
+    },
+    {
+      "label": "Academia.edu",
+      "url": "https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi",
+      "kind": "Research"
+    },
+    {
+      "label": "menj.me",
+      "url": "https://menj.me",
+      "kind": "Personal site"
+    },
+    {
+      "label": "Flickr",
+      "url": "https://www.flickr.com/photos/menj/",
+      "kind": "Photographs"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/mohdelfienieshaem.juferi/",
+      "kind": "Photo posts"
+    },
+    {
+      "label": "Wikipedia",
+      "url": "https://ms.wikipedia.org/wiki/Mohd_Elfie_Nieshaem_Juferi",
+      "kind": "Bahasa Melayu"
+    }
+  ],
+  "facts": [
+    {
+      "label": "Focus",
+      "value": "Search · Comparative religion<br>Publishing · Web tooling"
+    },
+    {
+      "label": "SEO since",
+      "value": "2006 — boutique SEO sub-con agency to 2015,<br>now in-house at a European digital marketing agency"
+    },
+    {
+      "label": "Writing since",
+      "value": "1995 — poetry, essays,<br>non-fiction in Malay &amp; English"
+    },
+    {
+      "label": "Imprint",
+      "value": "Langgam Fikir Enterprise<br>Seri Kembangan, Selangor"
+    }
+  ],
+  "archive": [
+    {
+      "label": "Works",
+      "url": "https://menj.bio/works/",
+      "note": "Books, poems and published pieces"
+    },
+    {
+      "label": "Apologetics",
+      "url": "https://menj.bio/apologetics/",
+      "note": "Papers, debates and rebuttals"
+    },
+    {
+      "label": "SEO",
+      "url": "https://menj.bio/seo/",
+      "note": "Professional record"
+    },
+    {
+      "label": "Qualifications",
+      "url": "https://menj.bio/qualifications/",
+      "note": "Certificates and awards"
+    },
+    {
+      "label": "Records",
+      "url": "https://menj.bio/records/",
+      "note": "Documents and primary evidence"
+    },
+    {
+      "label": "Media",
+      "url": "https://menj.bio/media/",
+      "note": "Photographs, audio and video"
+    },
+    {
+      "label": "Sources",
+      "url": "https://menj.bio/sources/",
+      "note": "Citations and references"
+    },
+    {
+      "label": "Identity",
+      "url": "https://menj.bio/identity/",
+      "note": "Authority record"
+    }
+  ]
+}

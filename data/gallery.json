@@ -1,0 +1,151 @@
+{
+  "flickr": [
+    {
+      "image": "assets/img/bunga-raya-355de5a635.jpg",
+      "imageAvif": "assets/img/bunga-raya-355de5a635.avif",
+      "imageWebp": "assets/img/bunga-raya-355de5a635.webp",
+      "url": "https://www.flickr.com/photos/menj/55496151838/",
+      "source": "Flickr",
+      "caption": "Bunga Raya",
+      "date": "2026-08-30"
+    },
+    {
+      "image": "assets/img/paulus-perosak-risalah-al-masih-a1ec29f372.jpg",
+      "imageAvif": "assets/img/paulus-perosak-risalah-al-masih-a1ec29f372.avif",
+      "imageWebp": "assets/img/paulus-perosak-risalah-al-masih-a1ec29f372.webp",
+      "url": "https://www.flickr.com/photos/menj/55472039270/",
+      "source": "Flickr",
+      "caption": "Paulus Perosak Risalah Al-Masih",
+      "date": "2026-08-18"
+    },
+    {
+      "image": "assets/img/iron-man-8a0bcc4aaf.jpg",
+      "imageAvif": "assets/img/iron-man-8a0bcc4aaf.avif",
+      "imageWebp": "assets/img/iron-man-8a0bcc4aaf.webp",
+      "url": "https://www.flickr.com/photos/menj/55471758448/",
+      "source": "Flickr",
+      "caption": "Iron Man",
+      "date": "2026-04-16"
+    },
+    {
+      "image": "assets/img/naik-877e4edccc.jpg",
+      "imageAvif": "assets/img/naik-877e4edccc.avif",
+      "imageWebp": "assets/img/naik-877e4edccc.webp",
+      "url": "https://www.flickr.com/photos/menj/11675356885/",
+      "source": "Flickr",
+      "caption": "NAIK",
+      "date": "2014-01-01"
+    },
+    {
+      "image": "assets/img/mjdir-com-reloaded-8575a0efdb.jpg",
+      "imageAvif": "assets/img/mjdir-com-reloaded-8575a0efdb.avif",
+      "imageWebp": "assets/img/mjdir-com-reloaded-8575a0efdb.webp",
+      "url": "https://www.flickr.com/photos/menj/6554144373/",
+      "source": "Flickr",
+      "caption": "MJDir.com Reloaded",
+      "date": "2011-12-22"
+    },
+    {
+      "image": "assets/img/mjdir-first-design-072db87cc6.jpg",
+      "imageAvif": "assets/img/mjdir-first-design-072db87cc6.avif",
+      "imageWebp": "assets/img/mjdir-first-design-072db87cc6.webp",
+      "url": "https://www.flickr.com/photos/menj/6525430977/",
+      "source": "Flickr",
+      "caption": "MJDir First Design",
+      "date": "2011-12-16"
+    },
+    {
+      "image": "assets/img/mjdir-second-design-40b3c7fc41.jpg",
+      "imageAvif": "assets/img/mjdir-second-design-40b3c7fc41.avif",
+      "imageWebp": "assets/img/mjdir-second-design-40b3c7fc41.webp",
+      "url": "https://www.flickr.com/photos/menj/6525429573/",
+      "source": "Flickr",
+      "caption": "MJDir Second Design",
+      "date": "2011-12-17"
+    },
+    {
+      "image": "assets/img/urlbrowse-submit-2c88aedec3.jpg",
+      "imageAvif": "assets/img/urlbrowse-submit-2c88aedec3.avif",
+      "imageWebp": "assets/img/urlbrowse-submit-2c88aedec3.webp",
+      "url": "https://www.flickr.com/photos/menj/5460021481/",
+      "source": "Flickr",
+      "caption": "URLBrowse Submit",
+      "date": "2011-02-20"
+    }
+  ],
+  "instagram": [],
+  "tiles": [
+    {
+      "image": "assets/img/bunga-raya-355de5a635.jpg",
+      "imageAvif": "assets/img/bunga-raya-355de5a635.avif",
+      "imageWebp": "assets/img/bunga-raya-355de5a635.webp",
+      "url": "https://www.flickr.com/photos/menj/55496151838/",
+      "source": "Flickr",
+      "caption": "Bunga Raya",
+      "date": "2026-08-30"
+    },
+    {
+      "image": "assets/img/paulus-perosak-risalah-al-masih-a1ec29f372.jpg",
+      "imageAvif": "assets/img/paulus-perosak-risalah-al-masih-a1ec29f372.avif",
+      "imageWebp": "assets/img/paulus-perosak-risalah-al-masih-a1ec29f372.webp",
+      "url": "https://www.flickr.com/photos/menj/55472039270/",
+      "source": "Flickr",
+      "caption": "Paulus Perosak Risalah Al-Masih",
+      "date": "2026-08-18"
+    },
+    {
+      "image": "assets/img/iron-man-8a0bcc4aaf.jpg",
+      "imageAvif": "assets/img/iron-man-8a0bcc4aaf.avif",
+      "imageWebp": "assets/img/iron-man-8a0bcc4aaf.webp",
+      "url": "https://www.flickr.com/photos/menj/55471758448/",
+      "source": "Flickr",
+      "caption": "Iron Man",
+      "date": "2026-04-16"
+    },
+    {
+      "image": "assets/img/naik-877e4edccc.jpg",
+      "imageAvif": "assets/img/naik-877e4edccc.avif",
+      "imageWebp": "assets/img/naik-877e4edccc.webp",
+      "url": "https://www.flickr.com/photos/menj/11675356885/",
+      "source": "Flickr",
+      "caption": "NAIK",
+      "date": "2014-01-01"
+    },
+    {
+      "image": "assets/img/mjdir-com-reloaded-8575a0efdb.jpg",
+      "imageAvif": "assets/img/mjdir-com-reloaded-8575a0efdb.avif",
+      "imageWebp": "assets/img/mjdir-com-reloaded-8575a0efdb.webp",
+      "url": "https://www.flickr.com/photos/menj/6554144373/",
+      "source": "Flickr",
+      "caption": "MJDir.com Reloaded",
+      "date": "2011-12-22"
+    },
+    {
+      "image": "assets/img/mjdir-first-design-072db87cc6.jpg",
+      "imageAvif": "assets/img/mjdir-first-design-072db87cc6.avif",
+      "imageWebp": "assets/img/mjdir-first-design-072db87cc6.webp",
+      "url": "https://www.flickr.com/photos/menj/6525430977/",
+      "source": "Flickr",
+      "caption": "MJDir First Design",
+      "date": "2011-12-16"
+    },
+    {
+      "image": "assets/img/mjdir-second-design-40b3c7fc41.jpg",
+      "imageAvif": "assets/img/mjdir-second-design-40b3c7fc41.avif",
+      "imageWebp": "assets/img/mjdir-second-design-40b3c7fc41.webp",
+      "url": "https://www.flickr.com/photos/menj/6525429573/",
+      "source": "Flickr",
+      "caption": "MJDir Second Design",
+      "date": "2011-12-17"
+    },
+    {
+      "image": "assets/img/urlbrowse-submit-2c88aedec3.jpg",
+      "imageAvif": "assets/img/urlbrowse-submit-2c88aedec3.avif",
+      "imageWebp": "assets/img/urlbrowse-submit-2c88aedec3.webp",
+      "url": "https://www.flickr.com/photos/menj/5460021481/",
+      "source": "Flickr",
+      "caption": "URLBrowse Submit",
+      "date": "2011-02-20"
+    }
+  ]
+}

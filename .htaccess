@@ -1,0 +1,29 @@
+# The guide is explicit that a custom 404 page must still return a 404 status
+# code, or search engines will index it as a real page.
+ErrorDocument 404 /404.html
+
+# One version of a URL reaches a document: canonical host, no double slashes,
+# trailing slash on directories. Adjust the host if the site moves.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^www\.menj\.buzz$ [NC]
+  RewriteRule ^(.*)$ https://menj.buzz/$1 [R=301,L]
+
+  # /press/slug -> /press/slug/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(/$|\.[a-zA-Z0-9]{2,5}$)
+  RewriteRule ^(.*)$ /$1/ [R=301,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>

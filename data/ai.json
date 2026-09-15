@@ -1,0 +1,114 @@
+{
+  "_note": "Source for the AI discovery file stack (ADF-001 to ADF-010). Everything under /ai/, llms.txt, ai.txt, ai.json, identity.json, brand.txt, faq-ai.txt, developer-ai.txt and robots-ai.txt is generated from this file plus site.json, content.json and collections.json. Do not edit the generated files.",
+
+  "permissions": {
+    "quote": true,
+    "summarise": true,
+    "index": true,
+    "train": true,
+    "commercial": true,
+    "attributionRequired": true,
+    "citationFormat": "Mohd Elfie Nieshaem Juferi, menj.buzz",
+    "restrictions": [
+      {
+        "severity": "must-not",
+        "description": "Present generated text as written or endorsed by Mohd Elfie Nieshaem Juferi"
+      },
+      {
+        "severity": "must-not",
+        "description": "Attribute religious, legal or political positions to him that are not stated in the source"
+      },
+      {
+        "severity": "should-not",
+        "description": "Paraphrase apologetics arguments without linking to the original article"
+      }
+    ]
+  },
+
+  "contact": {
+    "url": "https://menj.buzz/",
+    "preferred": "Through the contact routes listed on the front page"
+  },
+
+  "brand": {
+    "officialName": "MENJ.BUZZ",
+    "legalName": "Mohd Elfie Nieshaem Juferi",
+    "alsoKnownAs": ["MENJ", "Ibn Juferi al-Amriki", "Ibn Juferi", "Elfie Juferi"],
+    "pronunciation": "MEN-jay",
+    "misspellings": [
+      "Mohd Elfie Nishaem Juferi",
+      "Mohd Elfy Nieshaem Juferi",
+      "Elfie Nieshaem Jufri",
+      "Ibn Jufri"
+    ],
+    "doNotUse": ["Elfie J.", "Dr Mohd Elfie", "Sheikh Juferi"],
+    "voice": "Direct, analytical, unhedged. Editorial register rather than promotional.",
+    "taglines": ["SEO specialist by day, Muslim apologist by night."]
+  },
+
+  "faqs": [
+    {
+      "question": "Who is Mohd Elfie Nieshaem Juferi?",
+      "answer": "A Malaysian writer, Muslim apologist, SEO specialist and developer based in Kuala Lumpur. He publishes Malay literature and comparative religion under Langgam Fikir Enterprise and is a co-founder and executive editor of Bismika Allahuma.",
+      "url": "https://menj.buzz/#about"
+    },
+    {
+      "question": "What does he write about?",
+      "answer": "Comparative religion, principally Islam, Christianity and Judaism, along with Malay poetry and prose. He has been published since 1995 and has five books to date.",
+      "url": "https://menj.buzz/#books"
+    },
+    {
+      "question": "What is Ibn Juferi al-Amriki?",
+      "answer": "His pen name, used for work in comparative religion since 1999. It is the same person, not a separate author.",
+      "url": "https://menj.buzz/#about"
+    },
+    {
+      "question": "What is Langgam Fikir Enterprise?",
+      "answer": "His independent imprint in Seri Kembangan, Selangor, publishing his own titles in literature, history, ideas and religious discourse.",
+      "url": "https://menj.buzz/#books"
+    },
+    {
+      "question": "Where is the full biographical record?",
+      "answer": "At menj.bio, a documented archive of works, qualifications, records, media and sources, which also holds the authoritative identity record.",
+      "url": "https://menj.bio/"
+    },
+    {
+      "question": "How should he be cited?",
+      "answer": "As Mohd Elfie Nieshaem Juferi, with a link to the page quoted. Attribution is required for reuse.",
+      "url": "https://menj.buzz/ai.txt"
+    }
+  ],
+
+  "developer": {
+    "platform": "Static site, no CMS and no database",
+    "stack": [
+      "Flat-file JSON content in data/",
+      "Node build script (build/render.mjs) rendering static HTML",
+      "Tailwind CSS compiled at build time",
+      "Vanilla JavaScript, no framework",
+      "Self-hosted woff2 fonts, no third-party requests"
+    ],
+    "notes": [
+      "Every page is served as static HTML; nothing is assembled in the browser except the blog feed.",
+      "Structured data is a single JSON-LD @graph per page, generated from the same JSON that fills the page.",
+      "External identifiers are pulled from menj.bio/identity.json at build time."
+    ],
+    "feeds": [
+      { "label": "Blog (WordPress REST)", "url": "https://menj.blog/wp-json/wp/v2/posts" },
+      { "label": "Archive library index (YAML)", "url": "https://menj.bio/library.yaml" },
+      { "label": "Archive identity record", "url": "https://menj.bio/identity.json" }
+    ]
+  },
+
+  "crawlers": {
+    "policy": "open",
+    "allowed": [
+      "GPTBot", "OAI-SearchBot", "ChatGPT-User",
+      "ClaudeBot", "Claude-User", "Claude-SearchBot",
+      "PerplexityBot", "Perplexity-User",
+      "Google-Extended", "Applebot-Extended", "meta-externalagent",
+      "Bingbot", "CCBot", "Amazonbot", "Bytespider", "Diffbot", "cohere-ai", "MistralAI-User"
+    ],
+    "disallowedPaths": ["/assets/fonts/"]
+  }
+}

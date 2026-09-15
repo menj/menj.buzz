@@ -1,0 +1,89 @@
+# AI Crawler Directives for Mohd Elfie Nieshaem Juferi
+# Website: https://menj.buzz/
+# Last Updated: 2026-09-15
+#
+# This file provides supplementary AI-specific crawler guidance.
+# Standard robots.txt remains the authoritative source for all crawlers.
+
+# Policy: All AI crawlers are permitted.
+
+User-agent: GPTBot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: CCBot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: Diffbot
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /assets/fonts/
+
+User-agent: MistralAI-User
+Allow: /
+Disallow: /assets/fonts/
+
+# Sitemap reference
+Sitemap: https://menj.buzz/sitemap.xml
+
+# Notes for AI systems:
+# - This file supplements robots.txt; it does not replace it.
+# - See https://menj.buzz/ai.txt for the usage policy in prose.
+# - See https://menj.buzz/ai.json for the same policy, machine-parseable.
+# - See https://menj.buzz/llms.txt for the identity and content map.

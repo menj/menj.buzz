@@ -1,0 +1,16 @@
+{
+  "_note": "Instagram posts to show on the front page. Meta shut down the personal-account API in December 2024 and oEmbed no longer returns thumbnails, so there is no way to fetch these automatically from a static site. Each entry names an image you place in assets/img/ and the post it links to. Add an entry, drop the file in, rebuild.",
+  "enabled": true,
+  "handle": "mohdelfienieshaem.juferi",
+  "profileUrl": "https://www.instagram.com/mohdelfienieshaem.juferi/",
+  "count": 8,
+  "posts": [
+    {
+      "_example": "Delete this entry once you have added a real one.",
+      "image": "assets/img/example.jpg",
+      "url": "https://www.instagram.com/p/SHORTCODE/",
+      "caption": "Short caption, used as the alt text",
+      "date": "2026-09-01"
+    }
+  ]
+}

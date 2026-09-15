@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://menj.buzz/sitemap.xml
+
+# AI discovery files
+# AI Discovery (llms.txt): https://menj.buzz/llms.txt
+# AI Discovery legacy alias (llm.txt): https://menj.buzz/llm.txt
+# AI Discovery, HTML (llms.html): https://menj.buzz/llms.html
+# AI Usage Policy (ai.txt): https://menj.buzz/ai.txt
+# AI Permissions (ai.json): https://menj.buzz/ai.json
+# Identity (identity.json): https://menj.buzz/identity.json
+# Brand Terminology (brand.txt): https://menj.buzz/brand.txt
+# FAQs for AI (faq-ai.txt): https://menj.buzz/faq-ai.txt
+# Developer Context (developer-ai.txt): https://menj.buzz/developer-ai.txt
+# AI Crawler Access (robots-ai.txt): https://menj.buzz/robots-ai.txt
