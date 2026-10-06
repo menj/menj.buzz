@@ -230,7 +230,7 @@ ${mdToHtml(llms)}
   devtxt += `## Developer Notes\n\n${dev.notes.map((s) => `- ${s}`).join('\n')}\n\n`;
   devtxt += `## Data Feeds\n\n${dev.feeds.map((f) => `- [${f.label}](${f.url})`).join('\n')}\n\n`;
   devtxt += `## AI Discovery Files\n\n${FILES.map(([f, label]) => `- [${label}](${BASE}/${f})`).join('\n')}\n\n`;
-  devtxt += `## Sitemaps\n\n- [XML sitemap](${BASE}/sitemap.xml)\n- [HTML sitemap](${BASE}/sitemap/)\n`;
+  devtxt += `## Sitemaps\n\n- [XML sitemap](${BASE}/sitemap.xml)\n- [HTML sitemap](${BASE}/sitemap.html)\n`;
   writeFileSync(at('developer-ai.txt'), devtxt);
 
   /* ---------- ADF-010 robots-ai.txt ---------- */

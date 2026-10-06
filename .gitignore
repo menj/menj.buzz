@@ -2,5 +2,7 @@ node_modules/
 .DS_Store
 *.log
 
-# Instagram long-lived token — rewritten by every build, never commit
+# Instagram long-lived token, plaintext form — rewritten by every build if
+# present, never commit. Prefer data/secrets.instagram.json.enc instead,
+# which is encrypted (see build/secrets.mjs) and safe to commit.
 data/secrets.instagram.json

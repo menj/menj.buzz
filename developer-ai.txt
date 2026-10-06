@@ -2,7 +2,7 @@
 
 Lang: en
 Website: [https://menj.buzz/](https://menj.buzz/)
-Last Updated: 2026-09-15
+Last Updated: 2026-09-16
 
 ## Platform
 
@@ -46,4 +46,4 @@ Last Updated: 2026-09-15
 ## Sitemaps
 
 - [XML sitemap](https://menj.buzz/sitemap.xml)
-- [HTML sitemap](https://menj.buzz/sitemap/)
+- [HTML sitemap](https://menj.buzz/sitemap.html)

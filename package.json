@@ -1,0 +1,17 @@
+{
+  "name": "menj-buzz",
+  "version": "2.4.1",
+  "private": true,
+  "description": "Personal site for Mohd Elfie Nieshaem Juferi. Static, flat-file build: JSON in data/ rendered to static HTML by build/render.mjs. No framework, no database.",
+  "scripts": {
+    "build": "build/build.sh",
+    "secrets:encrypt": "node build/secrets.mjs encrypt",
+    "secrets:decrypt": "node build/secrets.mjs decrypt"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}

@@ -1,6 +1,6 @@
 # AI Crawler Directives for Mohd Elfie Nieshaem Juferi
 # Website: https://menj.buzz/
-# Last Updated: 2026-09-15
+# Last Updated: 2026-09-16
 #
 # This file provides supplementary AI-specific crawler guidance.
 # Standard robots.txt remains the authoritative source for all crawlers.

@@ -42,31 +42,31 @@
 </head>
 <body class="font-sans antialiased">
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{{chrome.skipLink}}</a>
 
 <header class="site-header sticky top-0 z-50 backdrop-blur-md">
-  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
-    <a href="{{base}}" class="block text-cream hover:text-accent transition-colors">
+  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="{{chrome.navAriaLabel}}">
+    <a href="/" class="block text-cream hover:text-accent transition-colors">
       {{{wordmarkSvg}}}
     </a>
     <div class="hidden sm:flex items-center gap-1">
-      <a href="{{base}}press/" class="nav-link">All releases</a>
-      <a href="{{base}}" class="nav-link">Front page</a>
+      <a href="{{base}}press.html" class="nav-link">{{press.archiveLabel}}</a>
+      <a href="/" class="nav-link">{{chrome.frontPageLabel}}</a>
     </div>
     <span class="theme-control">
       <span class="theme-end" data-for="day">Day</span>
       <button id="themeBtn" type="button" role="switch" aria-checked="false"
-        aria-label="Switch between day and night themes" class="theme-switch"></button>
+        aria-label="{{chrome.themeAriaLabel}}" class="theme-switch"></button>
       <span class="theme-end" data-for="night">Night</span>
     </span>
   </nav>
 </header>
 
-<nav class="mx-auto max-w-6xl px-5 sm:px-8 pt-8" aria-label="Breadcrumb">
+<nav class="mx-auto max-w-6xl px-5 sm:px-8 pt-8" aria-label="{{chrome.breadcrumbAriaLabel}}">
   <ol class="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
-    <li><a href="{{base}}" class="link-u hover:text-accent transition-colors">Home</a></li>
+    <li><a href="/" class="link-u hover:text-accent transition-colors">{{chrome.homeLabel}}</a></li>
     <li aria-hidden="true">&rsaquo;</li>
-    <li><a href="{{base}}press/" class="link-u hover:text-accent transition-colors">Press</a></li>
+    <li><a href="{{base}}press.html" class="link-u hover:text-accent transition-colors">{{press.eyebrow}}</a></li>
     <li aria-hidden="true">&rsaquo;</li>
     <li aria-current="page" class="text-cream normal-case tracking-normal">{{release.displayDate}}</li>
   </ol>
@@ -76,7 +76,7 @@
   <article class="grid lg:grid-cols-12 gap-10">
 
     <div class="lg:col-span-3">
-      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">Press release</p>
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{press.detailEyebrow}}</p>
       <p class="font-mono text-[11px] text-muted">{{release.displayDate}}</p>
       <p class="font-mono text-[11px] text-muted mt-1">{{release.dateline.city}}</p>
       {{#if release.tags}}<ul class="mt-6 space-y-1">
@@ -103,12 +103,12 @@
         {{/each}}</div>{{/if}}
 
       {{#if release.boilerplate}}<div class="mt-14 pt-8 hairline max-w-[62ch]">
-        <h2 class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-3">About</h2>
+        <h2 class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-3">{{press.aboutHeading}}</h2>
         <p class="text-sm leading-relaxed text-muted">{{{release.boilerplate}}}</p>
       </div>{{/if}}
 
       {{#if release.contact}}<div class="mt-8 max-w-[62ch]">
-        <h2 class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-3">Media contact</h2>
+        <h2 class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-3">{{press.contactHeading}}</h2>
         <p class="text-sm leading-relaxed text-muted">
           {{release.contact.name}}{{#if release.contact.role}}, {{release.contact.role}}{{/if}}<br>
           {{#if release.contact.email}}<a href="mailto:{{release.contact.email}}" class="link-u hover:text-accent transition-colors">{{release.contact.email}}</a><br>{{/if}}
@@ -119,8 +119,8 @@
       <p class="mt-12 font-mono text-[11px] tracking-[0.3em] text-muted">###</p>
 
       <p class="mt-10">
-        <a href="{{base}}press/" class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm border border-line text-cream hover:border-accent hover:text-accent transition-colors">
-          All press releases
+        <a href="{{base}}press.html" class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm border border-line text-cream hover:border-accent hover:text-accent transition-colors">
+          {{press.allReleasesButton}}
         </a>
       </p>
     </div>
@@ -133,10 +133,10 @@
     <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
       &copy; <span id="year">{{year}}</span> {{person.name}}
     </p>
-    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{{footer.credit}} · {{footer.sitemapLabel}} <a href="{{base}}sitemap/" class="link-u hover:text-accent transition-colors">{{footer.sitemapHtml}}</a><span class="text-muted" aria-hidden="true"> · </span><a href="{{base}}sitemap.xml" class="link-u hover:text-accent transition-colors">{{footer.sitemapXml}}</a></p>
+    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{{footer.credit}} · {{footer.sitemapLabel}} <a href="{{base}}sitemap.html" class="link-u hover:text-accent transition-colors">{{footer.sitemapHtml}}</a><span class="text-muted" aria-hidden="true"> · </span><a href="{{base}}sitemap.xml" class="link-u hover:text-accent transition-colors">{{footer.sitemapXml}}</a></p>
     <button id="themeBtn2" type="button" aria-pressed="false"
       class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted hover:text-accent transition-colors">
-      Switch to <span id="themeLabel2">day</span> <span aria-hidden="true">&#8634;</span>
+      {{chrome.switchToLabel}} <span id="themeLabel2">day</span> <span aria-hidden="true">&#8634;</span>
     </button>
   </div>
 </footer>

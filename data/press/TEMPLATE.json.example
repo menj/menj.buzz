@@ -1,0 +1,35 @@
+{
+  "_note": "TEMPLATE — this file ends in .json.example, not .json, on purpose: the build only reads files ending in .json from this folder, so this one is invisible to it and safe to leave here. To use it: copy this file, rename the copy to YYYY-MM-DD-slug.json (still inside data/press/), replace every REPLACE— value below, delete this _note field, then run ./build/build.sh. Required: slug, headline, summary, body, dateline.date — the build stops with the filename and the missing field if one of those is empty. Everything else (subhead, quotes, boilerplate, contact, tags) is optional; delete a whole block if you don't need it, rather than leaving it empty.",
+
+  "slug": "REPLACE — url-segment-like-this, lowercase, hyphens only",
+  "headline": "REPLACE — one sentence, no full stop",
+  "subhead": "REPLACE or delete this line — optional second line",
+
+  "dateline": {
+    "city": "REPLACE — e.g. Kuala Lumpur",
+    "date": "REPLACE — YYYY-MM-DD"
+  },
+
+  "summary": "REPLACE — one or two sentences. Used as the meta description, the archive blurb, and the social share description, so it has to stand alone without the rest of the release.",
+
+  "body": [
+    "REPLACE — first paragraph. The build prefixes it with the dateline automatically, so don't repeat the city or date here.",
+    "REPLACE — second paragraph.",
+    "REPLACE — third paragraph, or delete this line and the one above if the release is shorter."
+  ],
+
+  "quotes": [
+    { "text": "REPLACE — the quotation, without quote marks around it.", "attribution": "REPLACE — Name, title, organisation" }
+  ],
+
+  "boilerplate": "REPLACE or delete this line — the standard 'About [organisation]' paragraph that closes out most releases.",
+
+  "contact": {
+    "name": "REPLACE or delete this block",
+    "role": "REPLACE",
+    "email": "REPLACE",
+    "url": "REPLACE"
+  },
+
+  "tags": ["REPLACE-or-delete", "another-tag"]
+}

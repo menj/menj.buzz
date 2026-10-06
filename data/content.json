@@ -46,9 +46,20 @@
       "tip": "Every profile and property"
     }
   ],
-  "wordmark": {
-    "accent": "menj",
-    "muted": ".buzz"
+  "chrome": {
+    "skipLink": "Skip to content",
+    "navAriaLabel": "Primary",
+    "themeAriaLabel": "Switch between day and night themes",
+    "breadcrumbAriaLabel": "Breadcrumb",
+    "switchToLabel": "Switch to",
+    "homeLabel": "Home",
+    "frontPageLabel": "Front page",
+    "sectionsLabel": "Sections",
+    "contentsLabel": "Contents",
+    "archiveLinkLabel": "Archive",
+    "instagramLabel": "Instagram",
+    "flickrLabel": "Flickr",
+    "marqueeAriaLabel": "Pause or play the scrolling banner"
   },
   "hero": {
     "eyebrow": "Born In the USA · Raised in Penang · Based in Kuala Lumpur · Publishing since 1995",
@@ -138,7 +149,33 @@
     "heading": "For the record.",
     "intro": "Announcements from the imprint and the practice. Each release carries its own page, contact and structured data.",
     "archiveLabel": "All releases",
-    "empty": "No releases yet."
+    "empty": "No releases yet.",
+    "detailEyebrow": "Press release",
+    "aboutHeading": "About",
+    "contactHeading": "Media contact",
+    "allReleasesButton": "All press releases"
+  },
+  "pressIndex": {
+    "metaTitle": "Press releases",
+    "metaDescription": "Press releases from Mohd Elfie Nieshaem Juferi and Langgam Fikir Enterprise.",
+    "heading": "Every release, in order.",
+    "intro": "Announcements from Mohd Elfie Nieshaem Juferi and Langgam Fikir Enterprise. Review copies and interview requests through the contact on each release."
+  },
+  "sitemapPage": {
+    "metaTitle": "Sitemap",
+    "metaDescription": "Every page and section on MENJ.BUZZ, organised by subject, with links to each press release.",
+    "breadcrumbLabel": "Sitemap",
+    "heading": "Everything on this site.",
+    "intro": "Organised by subject rather than listed flat, so a section is easy to find without reading the whole page."
+  },
+  "notFound": {
+    "metaDescription": "The page you asked for does not exist. Start from the front page or the sitemap.",
+    "pageTitle": "Page not found",
+    "eyebrow": "404",
+    "heading": "Nothing at this address.",
+    "body": "The page you asked for does not exist, or it moved. Everything on this site is reachable from the front page.",
+    "primaryLabel": "Back to the front page",
+    "secondaryLabel": "See the sitemap"
   },
   "archive": {
     "eyebrow": "Archive",

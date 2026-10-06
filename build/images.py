@@ -51,6 +51,11 @@ for name in SOURCES:
             # covers 2x screens with nothing to spare.
             if name.startswith("img/") and "portrait" not in name and "card" not in name and max(im.size) > 480:
                 im.thumbnail((480, 480), Image.LANCZOS)
+            # The hero identity-card portrait renders at 96-112px; 320px
+            # covers 2x-3x screens with nothing to spare. Previously shipped
+            # at the full source resolution (440px) for a ~110px slot.
+            elif "portrait" in name and max(im.size) > 320:
+                im.thumbnail((320, 320), Image.LANCZOS)
             im.save(out, **kwargs)
             written.append(f"{out.name} ({out.stat().st_size // 1024} KB)")
         except Exception as err:                      # noqa: BLE001

@@ -1,5 +1,5 @@
 {
-  "_note": "Instagram posts to show on the front page. Meta shut down the personal-account API in December 2024 and oEmbed no longer returns thumbnails, so there is no way to fetch these automatically from a static site. Each entry names an image you place in assets/img/ and the post it links to. Add an entry, drop the file in, rebuild.",
+  "_note": "Fallback manifest, used when no Instagram token is configured (see build/instagram.mjs and 'Instagram is automatic' in README.md for the automatic pull). Each entry names an image you place in assets/img/ and the post it links to. Add an entry, drop the file in, rebuild.",
   "enabled": true,
   "handle": "mohdelfienieshaem.juferi",
   "profileUrl": "https://www.instagram.com/mohdelfienieshaem.juferi/",

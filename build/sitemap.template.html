@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Sitemap — {{site.siteName}}</title>
-<meta name="description" content="Every page and section on {{site.siteName}}, organised by subject, with links to each press release." />
+<title>{{sitemapPage.metaTitle}} — {{site.siteName}}</title>
+<meta name="description" content="{{sitemapPage.metaDescription}}" />
 <link rel="canonical" href="{{sitemapUrl}}" />
 <meta name="theme-color" content="{{site.themeColorNight}}" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="{{site.themeColorDay}}" media="(prefers-color-scheme: light)" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="{{site.siteName}}" />
-<meta property="og:title" content="Sitemap — {{site.siteName}}" />
+<meta property="og:title" content="{{sitemapPage.metaTitle}} — {{site.siteName}}" />
 <meta property="og:url" content="{{sitemapUrl}}" />
 
 <link rel="icon" href="{{base}}assets/img/favicon.svg" type="image/svg+xml" />
@@ -28,59 +28,56 @@
 </head>
 <body class="font-sans antialiased">
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{{chrome.skipLink}}</a>
 
 <header class="site-header sticky top-0 z-50 backdrop-blur-md">
-  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
-    <a href="{{base}}" class="block text-cream hover:text-accent transition-colors">{{{wordmarkSvg}}}</a>
+  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="{{chrome.navAriaLabel}}">
+    <a href="/" class="block text-cream hover:text-accent transition-colors">{{{wordmarkSvg}}}</a>
     <div class="hidden sm:flex items-center gap-1">
-      <a href="{{base}}" class="nav-link">Front page</a>
-      <a href="{{base}}press/" class="nav-link">Press</a>
+      <a href="/" class="nav-link">{{chrome.frontPageLabel}}</a>
+      <a href="{{base}}press.html" class="nav-link">{{press.eyebrow}}</a>
     </div>
     <span class="theme-control">
       <span class="theme-end" data-for="day">Day</span>
       <button id="themeBtn" type="button" role="switch" aria-checked="false"
-        aria-label="Switch between day and night themes" class="theme-switch"></button>
+        aria-label="{{chrome.themeAriaLabel}}" class="theme-switch"></button>
       <span class="theme-end" data-for="night">Night</span>
     </span>
   </nav>
 </header>
 
-<nav class="mx-auto max-w-6xl px-5 sm:px-8 pt-8" aria-label="Breadcrumb">
+<nav class="mx-auto max-w-6xl px-5 sm:px-8 pt-8" aria-label="{{chrome.breadcrumbAriaLabel}}">
   <ol class="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
-    <li><a href="{{base}}" class="link-u hover:text-accent transition-colors">Home</a></li>
+    <li><a href="/" class="link-u hover:text-accent transition-colors">{{chrome.homeLabel}}</a></li>
     <li aria-hidden="true">&rsaquo;</li>
-    <li aria-current="page" class="text-cream">Sitemap</li>
+    <li aria-current="page" class="text-cream">{{sitemapPage.breadcrumbLabel}}</li>
   </ol>
 </nav>
 
 <main id="main" class="mx-auto max-w-6xl px-5 sm:px-8 py-10 sm:py-16">
-  <h1 class="font-display text-3xl sm:text-5xl font-light">Everything on this site.</h1>
-  <p class="mt-5 max-w-[62ch] prose-soft">
-    Organised by subject rather than listed flat, so a section is easy to find without
-    reading the whole page.
-  </p>
+  <h1 class="font-display text-3xl sm:text-5xl font-light">{{sitemapPage.heading}}</h1>
+  <p class="mt-5 max-w-[62ch] prose-soft">{{sitemapPage.intro}}</p>
 
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
 
     <section>
-      <h2 class="font-display text-xl mb-4">Front page</h2>
+      <h2 class="font-display text-xl mb-4">{{chrome.frontPageLabel}}</h2>
       <ul class="space-y-2 text-sm">
         {{#each nav}}<li><a href="{{base}}{{href}}" class="link-u text-cream hover:text-accent transition-colors">{{label}}</a></li>
         {{/each}}</ul>
     </section>
 
     <section>
-      <h2 class="font-display text-xl mb-4">Press</h2>
+      <h2 class="font-display text-xl mb-4">{{press.eyebrow}}</h2>
       <ul class="space-y-2 text-sm">
-        <li><a href="{{base}}press/" class="link-u text-cream hover:text-accent transition-colors">All press releases</a></li>
-        {{#each releases}}<li><a href="{{base}}press/{{slug}}/" class="link-u text-cream hover:text-accent transition-colors">{{headline}}</a>
+        <li><a href="{{base}}press.html" class="link-u text-cream hover:text-accent transition-colors">{{press.allReleasesButton}}</a></li>
+        {{#each releases}}<li><a href="{{base}}press/{{slug}}.html" class="link-u text-cream hover:text-accent transition-colors">{{headline}}</a>
           <span class="block text-muted text-xs mt-1">{{displayDate}}</span></li>
         {{/each}}</ul>
     </section>
 
     <section>
-      <h2 class="font-display text-xl mb-4">Elsewhere</h2>
+      <h2 class="font-display text-xl mb-4">{{elsewhere.eyebrow}}</h2>
       <ul class="space-y-2 text-sm">
         {{#each db.elsewhere}}<li><a href="{{url}}" rel="noopener" class="link-u text-cream hover:text-accent transition-colors">{{label}}</a>
           <span class="block text-muted text-xs mt-1">{{kind}}</span></li>

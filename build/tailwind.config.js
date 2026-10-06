@@ -5,8 +5,9 @@
 module.exports = {
   content: [
     '../index.html',
-    '../press/**/*.html',
-    '../sitemap/*.html',
+    '../press.html',
+    '../press/*.html',
+    '../sitemap.html',
     '../404.html',
     '../assets/site.js'
   ],

@@ -11,3 +11,4 @@ npx --yes tailwindcss@3.4.17 \
   -o ../assets/tailwind.css \
   --minify
 echo "Wrote assets/tailwind.css"
+node cache-bust.mjs

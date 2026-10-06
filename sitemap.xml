@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://menj.buzz/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -17,25 +17,25 @@
     </image:image>
   </url>
   <url>
-    <loc>https://menj.buzz/sitemap/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <loc>https://menj.buzz/sitemap.html</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://menj.buzz/press/</loc>
+    <loc>https://menj.buzz/press.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://menj.buzz/press/langgam-fikir-paulus-third-edition/</loc>
+    <loc>https://menj.buzz/press/langgam-fikir-paulus-third-edition.html</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://menj.buzz/press/menj-buzz-launch/</loc>
+    <loc>https://menj.buzz/press/menj-buzz-launch.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

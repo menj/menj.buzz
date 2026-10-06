@@ -77,7 +77,7 @@ function loadReleases() {
       if (!release.dateline.date) throw new Error(`data/press/${name}: dateline.date is required`);
 
       release.file = name;
-      release.url = `${base}/press/${release.slug}/`;
+      release.url = `${base}/press/${release.slug}.html`;
       release.displayDate = displayDate(release.dateline.date);
       release.leadParagraph = release.body[0];
       /* The guide warns against overlong titles: Google truncates them. Suffix the
@@ -324,7 +324,7 @@ const ID = {
   publisher: BASE + '/#langgam-fikir',
   books: BASE + '/#books',
   repos: BASE + '/#code',
-  press: BASE + '/press/#collection',
+  press: BASE + '/press.html#collection',
   blog: 'https://menj.blog/#blog',
   archive: 'https://menj.bio/#website'
 };
@@ -504,7 +504,7 @@ function pressIndexGraph(list) {
       {
         '@type': 'CollectionPage',
         '@id': ID.press,
-        url: BASE + '/press/',
+        url: BASE + '/press.html',
         name: 'Press releases',
         isPartOf: { '@id': ID.website },
         about: { '@id': ID.person },
@@ -513,7 +513,7 @@ function pressIndexGraph(list) {
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: site.meta.canonical },
-            { '@type': 'ListItem', position: 2, name: 'Press', item: BASE + '/press/' }
+            { '@type': 'ListItem', position: 2, name: 'Press', item: BASE + '/press.html' }
           ]
         },
         mainEntity: {
@@ -577,7 +577,7 @@ function releaseGraph(release) {
           '@type': 'BreadcrumbList',
           itemListElement: [
             { '@type': 'ListItem', position: 1, name: 'Home', item: site.meta.canonical },
-            { '@type': 'ListItem', position: 2, name: 'Press', item: BASE + '/press/' },
+            { '@type': 'ListItem', position: 2, name: 'Press', item: BASE + '/press.html' },
             { '@type': 'ListItem', position: 3, name: release.headline, item: release.url }
           ]
         }
@@ -631,37 +631,39 @@ model.absoluteOgImage = site.meta.canonical.replace(/\/$/, '') + '/' + site.meta
 const html = render(template, { $root: { ...model, base: '' } });
 writeFileSync(at('index.html'), html);
 
+/* ---------- 404 page ---------- */
+const notFoundTemplate = readFileSync(at('build/404.template.html'), 'utf8');
+writeFileSync(at('404.html'), render(notFoundTemplate, { $root: { ...model, base: '' } }));
+
 
 /* ---------- press pages ---------- */
 const pressTemplate = readFileSync(at('build/press.template.html'), 'utf8');
 const pressIndexTemplate = readFileSync(at('build/press-index.template.html'), 'utf8');
-const pressIndexUrl = site.meta.canonical.replace(/\/$/, '') + '/press/';
+const pressIndexUrl = site.meta.canonical.replace(/\/$/, '') + '/press.html';
 
 for (const release of releases) release.jsonld = json(releaseGraph(release));
 
+if (releases.length) mkdirSync(at('press'), { recursive: true });
 for (const release of releases) {
-  const dir = at('press', release.slug);
-  mkdirSync(dir, { recursive: true });
   const page = render(pressTemplate, {
-    $root: { ...model, release, base: '../../', absoluteOgImage: model.absoluteOgImage }
+    $root: { ...model, release, base: '../', absoluteOgImage: model.absoluteOgImage }
   });
-  writeFileSync(resolve(dir, 'index.html'), page);
+  writeFileSync(at('press', `${release.slug}.html`), page);
 }
 
 /* HTML site map — the guide asks for one for users, alongside the XML file
-   for crawlers. Organised by subject rather than a flat list. */
+   for crawlers. Organised by subject rather than a flat list. Flat file at
+   the root, same as every other page, so it ends in .html like the rest. */
 const sitemapTemplate = readFileSync(at('build/sitemap.template.html'), 'utf8');
-const sitemapPageUrl = BASE + '/sitemap/';
-mkdirSync(at('sitemap'), { recursive: true });
+const sitemapPageUrl = BASE + '/sitemap.html';
 writeFileSync(
-  at('sitemap/index.html'),
-  render(sitemapTemplate, { $root: { ...model, base: '../', sitemapUrl: sitemapPageUrl } })
+  at('sitemap.html'),
+  render(sitemapTemplate, { $root: { ...model, base: '', sitemapUrl: sitemapPageUrl } })
 );
 
-mkdirSync(at('press'), { recursive: true });
 writeFileSync(
-  at('press/index.html'),
-  render(pressIndexTemplate, { $root: { ...model, base: '../', pressIndexUrl, pressJsonld: json(pressIndexGraph(releases)) } })
+  at('press.html'),
+  render(pressIndexTemplate, { $root: { ...model, base: '', pressIndexUrl, pressJsonld: json(pressIndexGraph(releases)) } })
 );
 
 /* sitemap: front page, press archive, every release */
@@ -723,6 +725,6 @@ writeFileSync(
 );
 
 const counts = Object.entries(collections).map(([k, v]) => `${k} ${v.length}`).join(', ');
-console.log(`Wrote ${releases.length} press page(s) + press/index.html`);
+console.log(`Wrote ${releases.length} press page(s) + press.html`);
 console.log(`Wrote index.html (${html.length.toLocaleString()} bytes) — ${counts}`);
 console.log('Wrote sitemap.xml, robots.txt');
