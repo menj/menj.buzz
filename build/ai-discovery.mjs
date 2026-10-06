@@ -269,7 +269,7 @@ ${mdToHtml(llmsBody)}
         {
           '@type': 'Organization',
           '@id': BASE + '/#langgam-fikir',
-          name: 'Langgam Fikir Enterprise',
+          name: site.person.businessName || 'Langgam Fikir Enterprise',
           founder: { '@id': BASE + '/#person' },
           address: { '@type': 'PostalAddress', addressLocality: 'Seri Kembangan', addressRegion: 'Selangor', addressCountry: 'MY' }
         }
