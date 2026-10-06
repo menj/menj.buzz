@@ -113,16 +113,6 @@
   ],
   "elsewhere": [
     {
-      "label": "menj.blog",
-      "url": "https://menj.blog",
-      "kind": "Writing"
-    },
-    {
-      "label": "menj.bio",
-      "url": "https://menj.bio",
-      "kind": "Archive"
-    },
-    {
       "label": "Bismika Allahuma",
       "url": "https://bismikaallahuma.org",
       "kind": "Apologetics"
@@ -151,11 +141,6 @@
       "label": "Academia.edu",
       "url": "https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi",
       "kind": "Research"
-    },
-    {
-      "label": "menj.me",
-      "url": "https://menj.me",
-      "kind": "Personal site"
     },
     {
       "label": "Flickr",

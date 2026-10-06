@@ -4,15 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Press releases — {{site.siteName}}</title>
-<meta name="description" content="Press releases from {{person.name}} and Langgam Fikir Enterprise." />
+<title>{{pressIndex.metaTitle}} — {{site.siteName}}</title>
+<meta name="description" content="{{pressIndex.metaDescription}}" />
 <link rel="canonical" href="{{pressIndexUrl}}" />
 <meta name="theme-color" content="{{site.themeColorNight}}" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="{{site.themeColorDay}}" media="(prefers-color-scheme: light)" />
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="{{site.siteName}}" />
-<meta property="og:title" content="Press releases — {{site.siteName}}" />
+<meta property="og:title" content="{{pressIndex.metaTitle}} — {{site.siteName}}" />
 <meta property="og:url" content="{{pressIndexUrl}}" />
 <meta property="og:image" content="{{absoluteOgImage}}" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -34,42 +34,39 @@
 </head>
 <body class="font-sans antialiased">
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{{chrome.skipLink}}</a>
 
 <header class="site-header sticky top-0 z-50 backdrop-blur-md">
-  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
-    <a href="{{base}}" class="block text-cream hover:text-accent transition-colors">
+  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="{{chrome.navAriaLabel}}">
+    <a href="/" class="block text-cream hover:text-accent transition-colors">
       {{{wordmarkSvg}}}
     </a>
     <div class="hidden sm:flex items-center gap-1">
-      <a href="{{base}}" class="nav-link">Front page</a>
+      <a href="/" class="nav-link">{{chrome.frontPageLabel}}</a>
     </div>
     <span class="theme-control">
       <span class="theme-end" data-for="day">Day</span>
       <button id="themeBtn" type="button" role="switch" aria-checked="false"
-        aria-label="Switch between day and night themes" class="theme-switch"></button>
+        aria-label="{{chrome.themeAriaLabel}}" class="theme-switch"></button>
       <span class="theme-end" data-for="night">Night</span>
     </span>
   </nav>
 </header>
 
-<nav class="mx-auto max-w-6xl px-5 sm:px-8 pt-8" aria-label="Breadcrumb">
+<nav class="mx-auto max-w-6xl px-5 sm:px-8 pt-8" aria-label="{{chrome.breadcrumbAriaLabel}}">
   <ol class="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
-    <li><a href="{{base}}" class="link-u hover:text-accent transition-colors">Home</a></li>
+    <li><a href="/" class="link-u hover:text-accent transition-colors">{{chrome.homeLabel}}</a></li>
     <li aria-hidden="true">&rsaquo;</li>
-    <li aria-current="page" class="text-cream">Press</li>
+    <li aria-current="page" class="text-cream">{{press.eyebrow}}</li>
   </ol>
 </nav>
 
 <main id="main" class="mx-auto max-w-6xl px-5 sm:px-8 py-10 sm:py-16">
   <div class="grid lg:grid-cols-12 gap-10">
     <div class="lg:col-span-3">
-      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">Press</p>
-      <h1 class="font-display text-3xl sm:text-4xl font-light leading-tight">Every release, in order.</h1>
-      <p class="mt-5 text-sm leading-relaxed text-muted max-w-xs">
-        Announcements from {{person.name}} and Langgam Fikir Enterprise.
-        Review copies and interview requests through the contact on each release.
-      </p>
+      <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-accent mb-4">{{press.eyebrow}}</p>
+      <h1 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{pressIndex.heading}}</h1>
+      <p class="mt-5 text-sm leading-relaxed text-muted max-w-xs">{{pressIndex.intro}}</p>
     </div>
 
     <div class="lg:col-span-9">
@@ -78,7 +75,7 @@
           <span class="font-mono text-[11px] text-muted pt-1">{{displayDate}}</span>
           <div>
             <h2 class="font-display text-lg sm:text-xl">
-              <a href="{{base}}press/{{slug}}/" class="link-u hover:text-accent transition-colors">{{headline}}</a>
+              <a href="{{base}}press/{{slug}}.html" class="link-u hover:text-accent transition-colors">{{headline}}</a>
             </h2>
             <p class="text-sm text-muted mt-1">{{summary}}</p>
           </div>
@@ -94,10 +91,10 @@
     <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
       &copy; <span id="year">{{year}}</span> {{person.name}}
     </p>
-    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{{footer.credit}} · {{footer.sitemapLabel}} <a href="{{base}}sitemap/" class="link-u hover:text-accent transition-colors">{{footer.sitemapHtml}}</a><span class="text-muted" aria-hidden="true"> · </span><a href="{{base}}sitemap.xml" class="link-u hover:text-accent transition-colors">{{footer.sitemapXml}}</a></p>
+    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{{footer.credit}} · {{footer.sitemapLabel}} <a href="{{base}}sitemap.html" class="link-u hover:text-accent transition-colors">{{footer.sitemapHtml}}</a><span class="text-muted" aria-hidden="true"> · </span><a href="{{base}}sitemap.xml" class="link-u hover:text-accent transition-colors">{{footer.sitemapXml}}</a></p>
     <button id="themeBtn2" type="button" aria-pressed="false"
       class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted hover:text-accent transition-colors">
-      Switch to <span id="themeLabel2">day</span> <span aria-hidden="true">&#8634;</span>
+      {{chrome.switchToLabel}} <span id="themeLabel2">day</span> <span aria-hidden="true">&#8634;</span>
     </button>
   </div>
 </footer>

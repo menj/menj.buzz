@@ -134,6 +134,7 @@
 
       li.appendChild(body);
       list.appendChild(li);
+      observeReveal(li);
     });
   }
 
@@ -267,24 +268,36 @@
     });
   }
 
-  /* ---------- Scroll reveal ---------- */
+  /* ---------- Scroll reveal ----------
+     Two populations of .reveal elements: everything present at first paint
+     (scanned below), and blog posts appended later once the feed fetch
+     resolves. Both need to go through the same observer, so it's kept in
+     a shared variable — observeReveal() is how renderPosts() registers
+     each post it appends after initReveal() has already run. */
+  var revealObserver = null;
+  var revealCount = 0;
+
+  function observeReveal(node) {
+    if (!revealObserver) { node.classList.add('in'); return; }
+    revealObserver.observe(node);
+  }
+
   function initReveal() {
     var targets = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
     if (!('IntersectionObserver' in window)) {
       targets.forEach(function (node) { node.classList.add('in'); });
       return;
     }
-    var revealed = 0;
-    var io = new IntersectionObserver(function (entries) {
+    revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        var delay = Math.min((revealed % 5) * 80, 320);
-        revealed += 1;
+        var delay = Math.min((revealCount % 5) * 80, 320);
+        revealCount += 1;
         window.setTimeout(function () { entry.target.classList.add('in'); }, delay);
-        io.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-    targets.forEach(function (node) { io.observe(node); });
+    targets.forEach(function (node) { revealObserver.observe(node); });
   }
 
   /* ---------- Contents rail ---------- */
@@ -310,10 +323,15 @@
     });
   }
 
-  loadFeed().then(function () {
-    initReveal();
-    initRail();
-    initPreferredSource();
-    initMobileNav();
-  });
+  /* Reveal, the rail, the preferred-source button and the mobile nav are all
+     independent of the feed and must not wait on it — earlier code chained
+     them behind loadFeed().then(), which meant the whole page's fade-in,
+     including the hero, stayed invisible until a cross-origin fetch to
+     menj.blog finished. That could run to several seconds on a cold
+     connection. They now run immediately; the feed loads alongside them. */
+  initReveal();
+  initRail();
+  initPreferredSource();
+  initMobileNav();
+  loadFeed();
 })();

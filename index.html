@@ -38,11 +38,22 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
 
+<link rel="preconnect" href="https://menj.blog" crossorigin>
+
 <link rel="preload" href="assets/fonts/sabon-next-lt-regular.woff2" as="font" type="font/woff2" crossorigin>
+<!-- The rest of the hero's above-the-fold text needs four more faces —
+     eyebrow (mono), the H1's italic accent word and the tagline (display
+     italic), the lede (body), and its italic cut — which otherwise aren't
+     discovered until site.css has loaded and parsed, adding a full
+     round-trip to the chain. -->
+<link rel="preload" href="assets/fonts/special-elite-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sabon-next-lt-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/eb-garamond-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/eb-garamond-italic-variable.woff2" as="font" type="font/woff2" crossorigin>
 
-<link rel="stylesheet" href="assets/tailwind.css">
+<link rel="stylesheet" href="assets/tailwind.css?v=2ac60679a7">
 
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=d7cc9253d2">
 
 <!-- Anti-flash: resolve the theme before first paint, ahead of the
      behaviour script at the foot of the document. -->
@@ -656,7 +667,7 @@
                 <source srcset="assets/img/mohd-elfie-nieshaem-juferi-portrait.avif" type="image/avif">
                 <source srcset="assets/img/mohd-elfie-nieshaem-juferi-portrait.webp" type="image/webp">
                 <img class="portrait w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover"
-                     src="assets/img/mohd-elfie-nieshaem-juferi-portrait.png" width="440" height="440" decoding="async"
+                     src="assets/img/mohd-elfie-nieshaem-juferi-portrait.png" width="320" height="320" decoding="async"
                      alt="Mohd Elfie Nieshaem Juferi, SEO specialist and publisher, Kuala Lumpur" />
               </picture>
             <span class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">also known as<br>
@@ -844,7 +855,7 @@
       <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">For the record.</h2>
       <p class="mt-5 text-sm leading-relaxed text-muted max-w-xs">Announcements from the imprint and the practice. Each release carries its own page, contact and structured data.</p>
       <p class="mt-6">
-        <a href="press/" class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted hover:text-accent transition-colors">All releases</a>
+        <a href="press.html" class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted hover:text-accent transition-colors">All releases</a>
       </p>
     </div>
 
@@ -854,7 +865,7 @@
           <span class="font-mono text-[11px] text-muted pt-1">1 Sep 2026</span>
           <div>
             <h3 class="font-display text-lg sm:text-xl">
-              <a href="press/langgam-fikir-paulus-third-edition/" class="link-u hover:text-accent transition-colors">Langgam Fikir Enterprise announces the third edition of Paulus: Perosak Risalah al-Masīḥ</a>
+              <a href="press/langgam-fikir-paulus-third-edition.html" class="link-u hover:text-accent transition-colors">Langgam Fikir Enterprise announces the third edition of Paulus: Perosak Risalah al-Masīḥ</a>
             </h3>
             <p class="text-sm text-muted mt-1">Langgam Fikir Enterprise will publish a third edition of its Malay-language study of Paul of Tarsus, revised throughout against the Tatabahasa Dewan standard and expanded with additional primary sources.</p>
           </div>
@@ -863,7 +874,7 @@
           <span class="font-mono text-[11px] text-muted pt-1">20 Aug 2026</span>
           <div>
             <h3 class="font-display text-lg sm:text-xl">
-              <a href="press/menj-buzz-launch/" class="link-u hover:text-accent transition-colors">MENJ.BUZZ launches as a single entity hub</a>
+              <a href="press/menj-buzz-launch.html" class="link-u hover:text-accent transition-colors">MENJ.BUZZ launches as a single entity hub</a>
             </h3>
             <p class="text-sm text-muted mt-1">Mohd Elfie Nieshaem Juferi has consolidated his publishing, apologetics and development work behind a single address.</p>
           </div>
@@ -1076,14 +1087,6 @@
     </div>
 
     <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-10">
-      <a href="https://menj.blog" target="_blank" rel="noopener" class="reveal flex items-baseline justify-between gap-4 py-4 group hairline">
-        <span class="text-cream group-hover:text-accent transition-colors">menj.blog</span>
-        <span class="font-mono text-[10px] uppercase tracking-widest text-muted">Writing</span>
-      </a>
-      <a href="https://menj.bio" target="_blank" rel="noopener" class="reveal flex items-baseline justify-between gap-4 py-4 group hairline">
-        <span class="text-cream group-hover:text-accent transition-colors">menj.bio</span>
-        <span class="font-mono text-[10px] uppercase tracking-widest text-muted">Archive</span>
-      </a>
       <a href="https://bismikaallahuma.org" target="_blank" rel="noopener" class="reveal flex items-baseline justify-between gap-4 py-4 group hairline">
         <span class="text-cream group-hover:text-accent transition-colors">Bismika Allahuma</span>
         <span class="font-mono text-[10px] uppercase tracking-widest text-muted">Apologetics</span>
@@ -1107,10 +1110,6 @@
       <a href="https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi" target="_blank" rel="noopener" class="reveal flex items-baseline justify-between gap-4 py-4 group hairline">
         <span class="text-cream group-hover:text-accent transition-colors">Academia.edu</span>
         <span class="font-mono text-[10px] uppercase tracking-widest text-muted">Research</span>
-      </a>
-      <a href="https://menj.me" target="_blank" rel="noopener" class="reveal flex items-baseline justify-between gap-4 py-4 group hairline">
-        <span class="text-cream group-hover:text-accent transition-colors">menj.me</span>
-        <span class="font-mono text-[10px] uppercase tracking-widest text-muted">Personal site</span>
       </a>
       <a href="https://www.flickr.com/photos/menj/" target="_blank" rel="noopener" class="reveal flex items-baseline justify-between gap-4 py-4 group hairline">
         <span class="text-cream group-hover:text-accent transition-colors">Flickr</span>
@@ -1170,7 +1169,7 @@
     <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
       &copy; <span id="year">2026</span> Mohd Elfie Nieshaem Juferi
     </p>
-    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Set in Sabon Next LT, EB Garamond &amp; Special Elite · Sitemap <a href="sitemap/" class="link-u hover:text-accent transition-colors">HTML</a><span class="text-muted" aria-hidden="true"> · </span><a href="sitemap.xml" class="link-u hover:text-accent transition-colors">XML</a></p>
+    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Set in Sabon Next LT, EB Garamond &amp; Special Elite · Sitemap <a href="sitemap.html" class="link-u hover:text-accent transition-colors">HTML</a><span class="text-muted" aria-hidden="true"> · </span><a href="sitemap.xml" class="link-u hover:text-accent transition-colors">XML</a></p>
     <button id="themeBtn2" type="button" aria-pressed="false"
       class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted hover:text-accent transition-colors">
       Switch to <span id="themeLabel2">day</span> <span aria-hidden="true">&#8634;</span>
@@ -1189,6 +1188,6 @@
 </script>
 
 <script async preferred-sources-control="manual" src="https://news.google.com/swg/js/v1/publisher.js"></script>
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v=de5bdd915a" defer></script>
 </body>
 </html>

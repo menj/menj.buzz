@@ -2,8 +2,8 @@
 # code, or search engines will index it as a real page.
 ErrorDocument 404 /404.html
 
-# One version of a URL reaches a document: canonical host, no double slashes,
-# trailing slash on directories. Adjust the host if the site moves.
+# One version of a URL reaches a document: canonical host, every page a flat
+# .html file — no extensionless "clean" URLs. Adjust the host if the site moves.
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTPS} off
@@ -12,18 +12,38 @@ ErrorDocument 404 /404.html
   RewriteCond %{HTTP_HOST} ^www\.menj\.buzz$ [NC]
   RewriteRule ^(.*)$ https://menj.buzz/$1 [R=301,L]
 
-  # /press/slug -> /press/slug/
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_URI} !(/$|\.[a-zA-Z0-9]{2,5}$)
-  RewriteRule ^(.*)$ /$1/ [R=301,L]
+  # Pre-.html folder-style URLs, permanently redirected to the .html file
+  # that replaced them, so nothing already linked or indexed breaks.
+  RewriteRule ^press/?$ /press.html [R=301,L]
+  RewriteRule ^sitemap/?$ /sitemap.html [R=301,L]
+  RewriteRule ^press/([^/.]+)/?$ /press/$1.html [R=301,L]
 </IfModule>
 
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# Text-based responses only — woff2/avif/webp/png are already compressed,
+# and re-compressing them wastes CPU for no size benefit.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+  AddOutputFilterByType DEFLATE application/javascript text/javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json application/manifest+json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/plain text/xml
+  AddOutputFilterByType BROTLI_COMPRESS application/javascript text/javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json application/ld+json application/manifest+json
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
 </IfModule>

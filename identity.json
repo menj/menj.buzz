@@ -1,135 +1,191 @@
 {
-  "@context": "https://schema.org",
-  "@graph": [
+  "$schema": "https://www.ai-visibility.org.uk/specifications/identity-json/identity-json.schema.json",
+  "language": "en",
+  "name": "Mohd Elfie Nieshaem Juferi",
+  "alternateName": [
+    "MENJ",
+    "Ibn Juferi al-Amriki",
+    "Ibn Juferi",
+    "Elfie Juferi"
+  ],
+  "url": "https://menj.buzz/",
+  "type": "Person",
+  "description": "SEO specialist by day, Muslim apologist by night.",
+  "location": {
+    "addressLocality": "Kuala Lumpur",
+    "addressCountry": "MY"
+  },
+  "contactPoints": [
     {
-      "@type": "Person",
-      "@id": "https://menj.buzz/#person",
-      "name": "Mohd Elfie Nieshaem Juferi",
-      "givenName": "Mohd Elfie Nieshaem",
-      "familyName": "Juferi",
-      "alternateName": [
-        "MENJ",
-        "Ibn Juferi al-Amriki",
-        "Ibn Juferi"
-      ],
-      "url": "https://menj.buzz/",
-      "mainEntityOfPage": {
-        "@id": "https://menj.buzz/#webpage"
-      },
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://menj.buzz/assets/img/mohd-elfie-nieshaem-juferi-portrait.png",
-        "width": 440,
-        "height": 440
-      },
-      "jobTitle": "SEO Specialist",
-      "description": "Writer, Muslim apologist, SEO specialist and developer. SEO by day, apologetics by night.",
-      "workLocation": {
-        "@type": "Place",
-        "name": "Remote",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Kuala Lumpur",
-          "addressCountry": "MY"
-        }
-      },
-      "affiliation": {
-        "@id": "https://menj.buzz/#langgam-fikir"
-      },
-      "homeLocation": {
-        "@type": "Place",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Kuala Lumpur",
-          "addressCountry": "MY"
-        }
-      },
-      "knowsAbout": [
-        "Search engine optimisation",
-        "Comparative religion",
-        "Islamic apologetics",
-        "Malay literature",
-        "WordPress development"
-      ],
-      "knowsLanguage": [
-        {
-          "@type": "Language",
-          "alternateName": "en"
-        },
-        {
-          "@type": "Language",
-          "alternateName": "ms"
-        }
-      ],
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Asia Pacific Institute of Information Technology"
-      },
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "Wikidata",
-          "value": "Q136687746",
-          "url": "https://www.wikidata.org/wiki/Q136687746"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "VIAF",
-          "value": "368178463286535070801",
-          "url": "https://viaf.org/en/viaf/368178463286535070801"
-        }
-      ],
-      "subjectOf": {
-        "@id": "https://menj.bio/#website"
-      },
-      "sameAs": [
-        "https://www.wikidata.org/wiki/Q136687746",
-        "https://viaf.org/en/viaf/368178463286535070801",
-        "https://scholar.google.com/citations?hl=en&user=hacGY18AAAAJ",
-        "https://menj.blog",
-        "https://menj.me",
-        "https://menj.bio",
-        "https://bismikaallahuma.org",
-        "https://github.com/menj",
-        "https://huggingface.co/menj1980",
-        "https://www.linkedin.com/in/mohd-elfie-nieshaem-bin-juferi",
-        "https://openlibrary.org/authors/OL15937447A/Mohd_Elfie_Nieshaem_Juferi",
-        "https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi",
-        "https://ms.wikipedia.org/wiki/Mohd_Elfie_Nieshaem_Juferi",
-        "https://www.flickr.com/photos/menj/",
-        "https://www.instagram.com/mohdelfienieshaem.juferi/",
-        "https://www.acronymfinder.com/Mohd-Elfie-Nieshaem-Juferi-(Islamic-scholar)-(MENJ).html",
-        "https://play.google.com/store/info/name/Mohd_Elfie_Nieshaem_Juferi?id=11nnv7kvb9",
-        "https://gravatar.com/menj",
-        "https://www.facebook.com/mohd.elfie.nieshaem.bin.juferi/",
-        "https://www.quora.com/profile/Mohd-Elfie-Nieshaem-Juferi",
-        "https://suno.com/@menj"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://menj.buzz/#website",
-      "url": "https://menj.buzz/",
-      "name": "MENJ.BUZZ",
-      "description": "Writer, Muslim apologist, SEO specialist and developer. SEO by day, apologetics by night. Start at menj.blog.",
-      "inLanguage": "en",
-      "publisher": {
-        "@id": "https://menj.buzz/#person"
-      }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://menj.buzz/#langgam-fikir",
-      "name": "Langgam Fikir Enterprise",
-      "founder": {
-        "@id": "https://menj.buzz/#person"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Seri Kembangan",
-        "addressRegion": "Selangor",
-        "addressCountry": "MY"
-      }
+      "type": "General Enquiries",
+      "url": "https://menj.buzz/"
     }
-  ]
+  ],
+  "sameAs": [
+    "https://menj.blog",
+    "https://menj.me",
+    "https://menj.bio",
+    "https://bismikaallahuma.org",
+    "https://github.com/menj",
+    "https://huggingface.co/menj1980",
+    "https://www.linkedin.com/in/mohd-elfie-nieshaem-bin-juferi",
+    "https://openlibrary.org/authors/OL15937447A/Mohd_Elfie_Nieshaem_Juferi",
+    "https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi",
+    "https://ms.wikipedia.org/wiki/Mohd_Elfie_Nieshaem_Juferi",
+    "https://www.flickr.com/photos/menj/",
+    "https://www.instagram.com/mohdelfienieshaem.juferi/"
+  ],
+  "services": [
+    "SEO and organic growth",
+    "Comparative religion",
+    "Writing, editing and publishing",
+    "Tools for the open web"
+  ],
+  "industry": "SEO Specialist",
+  "logo": "https://menj.buzz/assets/img/logo.svg",
+  "metadata": {
+    "lastUpdated": "2026-10-06"
+  },
+  "relatedFiles": {
+    "llms": "https://menj.buzz/llms.txt",
+    "permissions": "https://menj.buzz/ai.json",
+    "brandGuidelines": "https://menj.buzz/brand.txt"
+  },
+  "schemaOrg": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://menj.buzz/#person",
+        "name": "Mohd Elfie Nieshaem Juferi",
+        "givenName": "Mohd Elfie Nieshaem",
+        "familyName": "Juferi",
+        "alternateName": [
+          "MENJ",
+          "Ibn Juferi al-Amriki",
+          "Ibn Juferi"
+        ],
+        "url": "https://menj.buzz/",
+        "mainEntityOfPage": {
+          "@id": "https://menj.buzz/#webpage"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://menj.buzz/assets/img/mohd-elfie-nieshaem-juferi-portrait.png",
+          "width": 440,
+          "height": 440
+        },
+        "jobTitle": "SEO Specialist",
+        "description": "Writer, Muslim apologist, SEO specialist and developer. SEO by day, apologetics by night.",
+        "workLocation": {
+          "@type": "Place",
+          "name": "Remote",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kuala Lumpur",
+            "addressCountry": "MY"
+          }
+        },
+        "affiliation": {
+          "@id": "https://menj.buzz/#langgam-fikir"
+        },
+        "homeLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kuala Lumpur",
+            "addressCountry": "MY"
+          }
+        },
+        "knowsAbout": [
+          "Search engine optimisation",
+          "Comparative religion",
+          "Islamic apologetics",
+          "Malay literature",
+          "WordPress development"
+        ],
+        "knowsLanguage": [
+          {
+            "@type": "Language",
+            "alternateName": "en"
+          },
+          {
+            "@type": "Language",
+            "alternateName": "ms"
+          }
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Asia Pacific Institute of Information Technology"
+        },
+        "identifier": [
+          {
+            "@type": "PropertyValue",
+            "propertyID": "Wikidata",
+            "value": "Q136687746",
+            "url": "https://www.wikidata.org/wiki/Q136687746"
+          },
+          {
+            "@type": "PropertyValue",
+            "propertyID": "VIAF",
+            "value": "368178463286535070801",
+            "url": "https://viaf.org/en/viaf/368178463286535070801"
+          }
+        ],
+        "subjectOf": {
+          "@id": "https://menj.bio/#website"
+        },
+        "sameAs": [
+          "https://www.wikidata.org/wiki/Q136687746",
+          "https://viaf.org/en/viaf/368178463286535070801",
+          "https://scholar.google.com/citations?hl=en&user=hacGY18AAAAJ",
+          "https://menj.blog",
+          "https://menj.me",
+          "https://menj.bio",
+          "https://bismikaallahuma.org",
+          "https://github.com/menj",
+          "https://huggingface.co/menj1980",
+          "https://www.linkedin.com/in/mohd-elfie-nieshaem-bin-juferi",
+          "https://openlibrary.org/authors/OL15937447A/Mohd_Elfie_Nieshaem_Juferi",
+          "https://independentresearcher.academia.edu/MohdElfieNieshaemJuferi",
+          "https://ms.wikipedia.org/wiki/Mohd_Elfie_Nieshaem_Juferi",
+          "https://www.flickr.com/photos/menj/",
+          "https://www.instagram.com/mohdelfienieshaem.juferi/",
+          "https://www.acronymfinder.com/Mohd-Elfie-Nieshaem-Juferi-(Islamic-scholar)-(MENJ).html",
+          "https://play.google.com/store/info/name/Mohd_Elfie_Nieshaem_Juferi?id=11nnv7kvb9",
+          "https://gravatar.com/menj",
+          "https://www.facebook.com/mohd.elfie.nieshaem.bin.juferi/",
+          "https://www.quora.com/profile/Mohd-Elfie-Nieshaem-Juferi",
+          "https://suno.com/@menj"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://menj.buzz/#website",
+        "url": "https://menj.buzz/",
+        "name": "MENJ.BUZZ",
+        "description": "Writer, Muslim apologist, SEO specialist and developer. SEO by day, apologetics by night. Start at menj.blog.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://menj.buzz/#person"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://menj.buzz/#langgam-fikir",
+        "name": "Langgam Fikir Enterprise",
+        "founder": {
+          "@id": "https://menj.buzz/#person"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Seri Kembangan",
+          "addressRegion": "Selangor",
+          "addressCountry": "MY"
+        }
+      }
+    ]
+  },
+  "_specification": "https://www.ai-visibility.org.uk/specifications/identity-json/",
+  "_generator": "Generated by build/ai-discovery.mjs (AI Discovery Files spec layout, v2.2.2)"
 }

@@ -34,7 +34,18 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
 
+{{#if feed.endpoint}}<link rel="preconnect" href="https://{{feed.site}}" crossorigin>{{/if}}
+
 <link rel="preload" href="assets/fonts/sabon-next-lt-regular.woff2" as="font" type="font/woff2" crossorigin>
+<!-- The rest of the hero's above-the-fold text needs four more faces —
+     eyebrow (mono), the H1's italic accent word and the tagline (display
+     italic), the lede (body), and its italic cut — which otherwise aren't
+     discovered until site.css has loaded and parsed, adding a full
+     round-trip to the chain. -->
+<link rel="preload" href="assets/fonts/special-elite-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sabon-next-lt-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/eb-garamond-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/eb-garamond-italic-variable.woff2" as="font" type="font/woff2" crossorigin>
 
 <link rel="stylesheet" href="assets/tailwind.css">
 
@@ -54,11 +65,11 @@
 </head>
 <body class="font-sans antialiased">
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">{{chrome.skipLink}}</a>
 
 <!-- ============ NAV ============ -->
 <header class="site-header sticky top-0 z-50 backdrop-blur-md">
-  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="Primary">
+  <nav class="mx-auto max-w-6xl px-5 sm:px-8 h-16 flex items-center justify-between" aria-label="{{chrome.navAriaLabel}}">
     <a href="#top" class="block text-cream hover:text-accent transition-colors">
       {{{wordmarkSvg}}}
     </a>
@@ -73,7 +84,7 @@
     <span class="theme-control">
       <span class="theme-end" data-for="day">Day</span>
       <button id="themeBtn" type="button" role="switch" aria-checked="false"
-        aria-label="Switch between day and night themes" class="theme-switch"></button>
+        aria-label="{{chrome.themeAriaLabel}}" class="theme-switch"></button>
       <span class="theme-end" data-for="night">Night</span>
     </span>
   </nav>
@@ -81,24 +92,24 @@
 
 <div id="mobileNavScrim" class="mobile-nav-scrim" hidden></div>
 
-<nav id="mobileNav" class="mobile-nav" aria-label="Sections" hidden>
+<nav id="mobileNav" class="mobile-nav" aria-label="{{chrome.sectionsLabel}}" hidden>
   <div class="mobile-nav-inner">
-    <p class="font-mono text-[10px] uppercase tracking-[0.28em] text-accent mb-6">Sections</p>
+    <p class="font-mono text-[10px] uppercase tracking-[0.28em] text-accent mb-6">{{chrome.sectionsLabel}}</p>
     <ul class="mobile-nav-list">
       {{#each nav}}<li><a href="{{href}}">{{label}}<span>{{tip}}</span></a></li>
       {{/each}}</ul>
 
     <div class="mobile-nav-foot">
-      <a href="{{instagram.profileUrl}}" target="_blank" rel="noopener">Instagram</a>
-      <a href="{{flickr.profileUrl}}" target="_blank" rel="noopener">Flickr</a>
-      <a href="https://menj.bio" target="_blank" rel="noopener">Archive</a>
+      <a href="{{instagram.profileUrl}}" target="_blank" rel="noopener">{{chrome.instagramLabel}}</a>
+      <a href="{{flickr.profileUrl}}" target="_blank" rel="noopener">{{chrome.flickrLabel}}</a>
+      <a href="{{person.archiveUrl}}" target="_blank" rel="noopener">{{chrome.archiveLinkLabel}}</a>
     </div>
   </div>
 </nav>
 
 
-<nav class="contents font-mono" aria-label="Contents">
-  <p>Contents</p>
+<nav class="contents font-mono" aria-label="{{chrome.contentsLabel}}">
+  <p>{{chrome.contentsLabel}}</p>
   <ul class="font-sans">
     {{#each nav}}<li><a href="{{href}}">{{label}}</a></li>
     {{/each}}</ul>
@@ -149,7 +160,7 @@
                 <source srcset="{{person.imageAvif}}" type="image/avif">
                 <source srcset="{{person.imageWebp}}" type="image/webp">
                 <img class="portrait w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover"
-                     src="{{person.image}}" width="440" height="440" decoding="async"
+                     src="{{person.image}}" width="320" height="320" decoding="async"
                      alt="{{person.imageAlt}}" />
               </picture>
             <span class="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">also known as<br>
@@ -173,7 +184,7 @@
 
   <!-- marquee -->
   <div class="marquee-wrap relative py-5 overflow-hidden">
-    <button id="marqueeBtn" type="button" aria-pressed="false" aria-label="Pause or play the scrolling banner"
+    <button id="marqueeBtn" type="button" aria-pressed="false" aria-label="{{chrome.marqueeAriaLabel}}"
       class="marquee-toggle font-mono text-[10px] uppercase tracking-[0.18em] px-2.5 py-1.5 rounded-full border border-line text-muted hover:text-cream hover:border-accent transition-colors"
       style="background:var(--c-ink)">Pause</button>
     <div class="marquee gap-8 font-mono text-[11px] uppercase tracking-[0.24em] text-muted" data-paused="false">
@@ -276,7 +287,7 @@
       <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{press.heading}}</h2>
       <p class="mt-5 text-sm leading-relaxed text-muted max-w-xs">{{press.intro}}</p>
       <p class="mt-6">
-        <a href="press/" class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted hover:text-accent transition-colors">{{press.archiveLabel}}</a>
+        <a href="press.html" class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted hover:text-accent transition-colors">{{press.archiveLabel}}</a>
       </p>
     </div>
 
@@ -286,7 +297,7 @@
           <span class="font-mono text-[11px] text-muted pt-1">{{displayDate}}</span>
           <div>
             <h3 class="font-display text-lg sm:text-xl">
-              <a href="press/{{slug}}/" class="link-u hover:text-accent transition-colors">{{headline}}</a>
+              <a href="press/{{slug}}.html" class="link-u hover:text-accent transition-colors">{{headline}}</a>
             </h3>
             <p class="text-sm text-muted mt-1">{{summary}}</p>
           </div>
@@ -342,9 +353,9 @@
         {{/each}}</ul>{{else}}<p class="text-sm text-muted">{{photographs.empty}}</p>{{/if}}
 
       <p class="mt-5 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-        <a href="{{instagram.profileUrl}}" target="_blank" rel="noopener" class="link-u hover:text-accent transition-colors">Instagram</a>
+        <a href="{{instagram.profileUrl}}" target="_blank" rel="noopener" class="link-u hover:text-accent transition-colors">{{chrome.instagramLabel}}</a>
         <span class="mx-2" aria-hidden="true">·</span>
-        <a href="{{flickr.profileUrl}}" target="_blank" rel="noopener" class="link-u hover:text-accent transition-colors">Flickr</a>
+        <a href="{{flickr.profileUrl}}" target="_blank" rel="noopener" class="link-u hover:text-accent transition-colors">{{chrome.flickrLabel}}</a>
       </p>
     </div>
   </div>
@@ -360,7 +371,7 @@
       <h2 class="font-display text-3xl sm:text-4xl font-light leading-tight">{{archive.heading}}</h2>
       <p class="mt-6 text-sm leading-relaxed text-muted max-w-sm">{{{archive.intro}}}</p>
       <p class="mt-7">
-        <a href="https://menj.bio" target="_blank" rel="noopener"
+        <a href="{{person.archiveUrl}}" target="_blank" rel="noopener"
            class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm border border-line text-cream hover:border-accent hover:text-accent transition-colors">
           {{archive.cta}} <span aria-hidden="true">&rarr;</span>
         </a>
@@ -437,10 +448,10 @@
     <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
       &copy; <span id="year">{{year}}</span> {{person.name}}
     </p>
-    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{{footer.credit}} · {{footer.sitemapLabel}} <a href="sitemap/" class="link-u hover:text-accent transition-colors">{{footer.sitemapHtml}}</a><span class="text-muted" aria-hidden="true"> · </span><a href="sitemap.xml" class="link-u hover:text-accent transition-colors">{{footer.sitemapXml}}</a></p>
+    <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">{{footer.credit}} · {{footer.sitemapLabel}} <a href="sitemap.html" class="link-u hover:text-accent transition-colors">{{footer.sitemapHtml}}</a><span class="text-muted" aria-hidden="true"> · </span><a href="sitemap.xml" class="link-u hover:text-accent transition-colors">{{footer.sitemapXml}}</a></p>
     <button id="themeBtn2" type="button" aria-pressed="false"
       class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted hover:text-accent transition-colors">
-      Switch to <span id="themeLabel2">day</span> <span aria-hidden="true">&#8634;</span>
+      {{chrome.switchToLabel}} <span id="themeLabel2">day</span> <span aria-hidden="true">&#8634;</span>
     </button>
   </div>
   <p class="mt-6 text-[11px] leading-relaxed text-muted max-w-2xl">{{footer.note}}</p>

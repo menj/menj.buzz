@@ -4,14 +4,18 @@ Personal site for Mohd Elfie Nieshaem Juferi. Static, flat-file, no framework an
 no database. Content lives as JSON in `data/`; a small Node script renders it
 into a single static HTML page.
 
+Current version: see `package.json`. Version history: `CHANGELOG.md`. To
+add or edit content without reading the rest of this file: `INSTALL.md`.
+
 ## Structure
 
 ```
 menj-buzz/
-├── index.html  404.html  robots.txt  sitemap.xml  site.webmanifest
+├── index.html  press.html  sitemap.html  404.html  robots.txt  sitemap.xml
+│   site.webmanifest                              every page ends in .html
 ├── llms.txt  llm.txt  llms.html  ai.txt  ai.json  identity.json
 │   brand.txt  faq-ai.txt  developer-ai.txt  robots-ai.txt   GENERATED
-├── .htaccess
+├── package.json  CHANGELOG.md  INSTALL.md  .htaccess  .gitignore
 ├── assets/
 │   ├── site.css            design tokens, theme, components
 │   ├── tailwind.css        GENERATED
@@ -24,17 +28,20 @@ menj-buzz/
 │   ├── collections.json    books, repos, services, links, archive
 │   ├── ai.json             permissions, brand terms, FAQs
 │   ├── instagram.json      manifest and handle
+│   ├── secrets.instagram.json(.enc)  token — plaintext gitignored, .enc committable
 │   ├── cache-*.json        GENERATED, safe to delete
-│   └── press/              one JSON per release
-├── press/                  GENERATED
-├── sitemap/                GENERATED
+│   └── press/              one JSON per release, plus TEMPLATE.json.example
+├── press/                  GENERATED — one <slug>.html per release
 └── build/                  build.sh, render.mjs, gallery.mjs, instagram.mjs,
-                            ai-discovery.mjs, images.py, templates, config
+                            secrets.mjs, cache-bust.mjs, ai-discovery.mjs,
+                            images.py, templates, config
 ```
 
-Five directories at the root, two of them generated output and one of them
+Four directories at the root, one of them generated output and one of them
 development tooling. Stylesheets, scripts, fonts and images all live under
-`assets/`; every image of any kind lives in `assets/img/`.
+`assets/`; every image of any kind lives in `assets/img/`. `npm install`
+creates a gitignored `node_modules/` for the one dependency, `crypto-js`,
+used only by `build/secrets.mjs` — nothing else in the build needs it.
 
 ## Editing content
 
@@ -50,8 +57,11 @@ static `index.html`, plus `sitemap.xml` and `robots.txt`. The `Person` JSON-LD
 is assembled from `data/site.json`, so the structured data and the visible page
 can never drift apart. Nothing is assembled in the browser except the blog feed.
 
-**Never edit `index.html`, `assets/tailwind.css`, `sitemap.xml` or `robots.txt`
-directly.** The next build overwrites them.
+**Never edit `index.html`, `press.html`, `sitemap.html`, `404.html`,
+`press/*.html`, `assets/tailwind.css`, `sitemap.xml` or `robots.txt`
+directly.** Every one of them is generated; the next build overwrites
+whatever you typed in by hand. Their sources are the matching files under
+`build/*.template.html` and the JSON in `data/`.
 
 ### Writing content
 
@@ -100,27 +110,79 @@ root. Nothing is compiled on the server. `build/` and `data/` are source, not
 runtime: both can be excluded from the upload, though keeping `data/` costs
 nothing and makes the deployed copy self-describing.
 
-## Editing content
+## Collections, identity and structured data
 
-Books, repositories, service blurbs, the identity table and the link directory
-all live in `data/site.json`. Add an entry there and it appears on the page.
+Books, repositories, service blurbs, the archive and the link directory all
+live in `data/collections.json`, under `db`. Add an entry there and it
+appears on the page — nothing else to touch.
 
-The biography, hero copy, page metadata and the `Person` JSON-LD are static
-markup in `index.html`, deliberately: search engines and link unfurlers read the
-served HTML, so the identity payload must not depend on JavaScript.
+The biography, hero copy and every section's prose live in `data/content.json`.
+Identity fields — name, image, alumnus record, the `sameAs` list the `Person`
+JSON-LD is built from — live in `data/site.json`. All of it renders into the
+static HTML at build time, so the visible page, the meta tags and the
+structured data are the same JSON and can't drift apart from one another.
+Search engines and link unfurlers read the served HTML directly; nothing on
+the page depends on JavaScript except the live blog feed.
 
-`index.html` also carries a copy of the same JSON in a
-`<script type="application/json" id="site-data">` block, which lets the page
-render when opened directly from disk over `file://`. When the site is served
-over HTTP, `data/site.json` wins. **Update both, or regenerate the embedded
-block from the data file, whenever content changes.**
+## What's editable, and where
+
+Every page is generated from the JSON in `data/`; the tables below are the
+complete map. If it isn't in one of these files, it's a layout choice in
+`build/*.template.html`, not content — see "Template syntax" above.
+
+**Text and links, section by section:**
+
+| Section | Prose, labels and links | List items |
+| --- | --- | --- |
+| Header, nav, footer chrome | `content.json` → `nav`, `chrome`, `footer` | — |
+| Hero | `content.json` → `hero` | button list is inline in `hero.buttons` |
+| Identity card (the quick-facts list) | — | `collections.json` → `db.facts` |
+| About | `content.json` → `about` | — |
+| What I do | `content.json` → `services` (eyebrow/heading) | `collections.json` → `db.services` |
+| Books | `content.json` → `books` | `collections.json` → `db.books` |
+| Writing | `content.json` → `writing` | live from `menj.blog`, see "The blog feed" |
+| Press | `content.json` → `press` | `data/press/*.json`, one file per release |
+| Code | `content.json` → `code` | `collections.json` → `db.repos` |
+| Photographs | `content.json` → `photographs` | `data/instagram.json`, `site.json` → `flickr` |
+| Archive | `content.json` → `archive` | `collections.json` → `db.archive` |
+| Elsewhere | `content.json` → `elsewhere` | `collections.json` → `db.elsewhere` |
+| Currently (CTA) | `content.json` → `cta` | button list inline in `cta.buttons` |
+| Marquee banner | — | `collections.json` → `db.marquee` |
+| Press index, sitemap, 404 pages | `content.json` → `pressIndex`, `sitemapPage`, `notFound` | — |
+
+**Everything else:**
+
+| What | Lives in |
+| --- | --- |
+| Name, portrait, bio facts, `sameAs`, `Person` JSON-LD | `site.json` → `person` |
+| Site title, description, canonical, locale, theme colours, OG/Twitter tags | `site.json` → `meta` |
+| Colours — every one, night theme and day theme | `assets/site.css` → the `--c-*` custom properties in `:root` |
+| Fonts and type sizes | `assets/site.css`; see "Typography" |
+| AI crawler permissions, brand terms, FAQs | `data/ai.json` |
+| Instagram token (for the automated pull) | `data/secrets.instagram.json(.enc)`, or `IG_ACCESS_TOKEN` |
+| Section order, page layout, HTML structure | `build/*.template.html` — the one thing you edit for layout, not content |
+| Wordmark colour | CSS token, as above |
+| Wordmark text | fixed by design — see "The wordmark" |
+| Day/Night, Pause/Play, Open/Close-menu button words | `assets/site.js` — see note below |
+
+Three pairs of words — the theme switch (Day/Night), the marquee toggle
+(Pause/Play), and the mobile-menu button (Open/Close the menu) — live in
+`assets/site.js`, which sets whichever word matches the current state at
+runtime. They're deliberately not duplicated into `content.json`: doing so
+would only create a second place that has to be kept in sync with the
+script for two-word toggle labels, not real editorial content.
 
 ## Publishing a press release
 
 Drop a JSON file into `data/press/` and run `./build/build.sh`. Nothing else.
-The build will list it on the front page, list it in the archive at `/press/`,
-give it its own page at `/press/<slug>/` with `NewsArticle` structured data,
-and add it to `sitemap.xml`.
+The build will list it on the front page, list it in the archive at
+`/press.html`, give it its own page at `/press/<slug>.html` with
+`NewsArticle` structured data, and add it to `sitemap.xml`.
+
+`data/press/TEMPLATE.json.example` is a filled-in-the-blanks starting
+point — copy it, rename the copy so it ends in `.json`, and fill it in.
+It's safe to leave in place: the build only reads files ending in
+`.json`, and this one deliberately doesn't.
 
 Releases are ordered by `dateline.date`, not by filename, though naming files
 `YYYY-MM-DD-slug.json` keeps the directory readable.
@@ -241,9 +303,10 @@ which requires a Professional (Business or Creator) account.
 The awkward part of that API is the token: Meta issues one valid for about 60
 days. No server is needed to keep it alive, because **the build refreshes it**.
 Every run of `build.sh` calls the refresh endpoint, receives a fresh 60-day
-token, and writes it back to `data/secrets.instagram.json`. Building at any
-point inside the window rolls the clock forward indefinitely. Only a two-month
-gap between builds breaks it, and the fix is pasting one new token.
+token, and writes it back to wherever it read it from — the encrypted file if
+that's the source, the plaintext one otherwise. Building at any point inside
+the window rolls the clock forward indefinitely. Only a two-month gap between
+builds breaks it, and the fix is pasting one new token.
 
 ### One-time setup
 
@@ -253,9 +316,36 @@ gap between builds breaks it, and the fix is pasting one new token.
    paste the token into it. The file is gitignored and is rewritten on every
    build.
 
-Alternatively, set `IG_ACCESS_TOKEN` in the environment and skip the file —
-useful in CI, where the token belongs in an encrypted secret rather than on
-disk.
+Alternatively, set `IG_ACCESS_TOKEN` in the environment and skip the file
+entirely — useful in CI, where the token belongs in a secret manager rather
+than on disk at all.
+
+### Encrypting the token
+
+To keep the token in the repository instead of gitignored on disk — a laptop
+that isn't backed up, a shared machine — encrypt it with `build/secrets.mjs`
+(AES-256-CBC, PBKDF2 key derivation, via [crypto-js](https://github.com/brix/crypto-js) —
+note crypto-js is no longer actively maintained upstream; it's used here
+because it was already on hand, not because it's the current recommendation):
+
+```sh
+export SECRETS_KEY="a long passphrase, not committed anywhere"
+npm run secrets:encrypt -- data/secrets.instagram.json
+```
+
+That writes `data/secrets.instagram.json.enc` — safe to commit — and leaves
+the plaintext file in place; delete it once you've confirmed the encrypted
+one works. `SECRETS_KEY` has to be set in the environment at build time
+(export it in your shell profile, or set it as a CI secret); with it present,
+`build/instagram.mjs` reads and re-encrypts the token from the `.enc` file
+automatically, the same way it already reads and rewrites the plaintext one.
+Precedence is `IG_ACCESS_TOKEN` env var, then the encrypted file, then the
+plaintext file.
+
+To decrypt for inspection: `npm run secrets:decrypt --
+data/secrets.instagram.json.enc` prints the JSON to stdout; add a third
+argument to write it to a file instead. Both commands read `SECRETS_KEY` from
+the environment and work on any JSON file, not just this one.
 
 Videos and reels contribute their still frame; carousels contribute their first
 image. Captions are trimmed to the first line with hashtags stripped, and that
@@ -307,7 +397,12 @@ so it renders identically whether or not the webfont has loaded and stays sharp
 at any size. The build inlines it into the header of every page so it can take
 its colours from CSS: MENJ uses `currentColor`, the separating point uses
 `--c-accent`, and BUZZ sits back at 45 per cent. Size is controlled by the
-`.wordmark` height in `assets/site.css`, not by the SVG.
+`.wordmark` height in `assets/site.css`, not by the SVG. Its colour is a CSS
+token like everything else and lives in `assets/site.css`; its text does not
+live in `data/` at all, deliberately — outlined paths, not live text, are what
+make it render the same with or without the webfont, so the wording is fixed
+until the SVG is regenerated (below). An earlier `wordmark` key in
+`content.json` implied otherwise and did nothing; it's been removed.
 
 `assets/img/favicon.svg` is the M from the same face, in accent on ink.
 
@@ -387,6 +482,13 @@ the stylesheet is rebuilt:
 
 Requires Node. Nothing else in the site depends on it.
 
+`build/cache-bust.mjs` runs as the last step of `build.sh`, after this. It
+hashes `tailwind.css`, `site.css` and `site.js` and appends `?v=<hash>` to
+every reference to them across every generated page, so a browser that
+cached the old file fetches the new one the moment its content actually
+changes — necessary because `.htaccess` gives those three a one-year cache
+lifetime. Nothing to run by hand; every `build.sh` run updates it.
+
 ## Design notes
 
 - Two themes, `night` and `day`, selected by the switch in the header and the
@@ -407,5 +509,30 @@ Requires Node. Nothing else in the site depends on it.
   The host appears in the canonical link, the Open Graph and Twitter tags, the
   `Person` JSON-LD, `robots.txt` and `sitemap.xml`.
 - Update `lastmod` in `sitemap.xml` when the page changes materially.
-- Serve `assets/`, `css/` and `js/` with long cache headers, and `index.html`
-  and `data/site.json` with short ones.
+- `.htaccess` already sets long cache lifetimes (`mod_expires`) and
+  compression (`mod_deflate`/`mod_brotli`) for static assets, and short ones
+  for the HTML itself — nothing to configure at the host, provided it runs
+  Apache with those modules available. On a different server, replicate the
+  same rules in its own config.
+
+## Versioning
+
+This project follows [Semantic Versioning](https://semver.org/): the current
+version lives in `package.json`, and `CHANGELOG.md` records what changed at
+each one, in [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format.
+
+The version tracks the build system in `build/` and the templates — not the
+prose. Publishing a press release or editing copy in `data/` is ordinary
+content work and goes out through `./build/build.sh` without a version bump.
+Bump the version when `render.mjs`, the templates, `.htaccess` or the URL
+structure change:
+
+```sh
+npm version patch   # fixes, small template tweaks
+npm version minor   # new feature or section that doesn't break existing pages
+npm version major   # breaking change to the public URL structure or output
+```
+
+Each runs without a git repository present; add `--no-git-tag-version` if a
+git tag isn't wanted. Add a matching entry to `CHANGELOG.md` under the new
+version when you do.

@@ -54,7 +54,9 @@
     "imageAlt": "Mohd Elfie Nieshaem Juferi, SEO specialist and publisher, Kuala Lumpur",
     "workDescription": "In-house SEO for a Europe-based digital marketing agency, working remotely",
     "imageAvif": "assets/img/mohd-elfie-nieshaem-juferi-portrait.avif",
-    "imageWebp": "assets/img/mohd-elfie-nieshaem-juferi-portrait.webp"
+    "imageWebp": "assets/img/mohd-elfie-nieshaem-juferi-portrait.webp",
+    "archiveUrl": "https://menj.bio",
+    "businessName": "Langgam Fikir Enterprise"
   },
   "feed": {
     "endpoint": "https://menj.blog/wp-json/wp/v2/posts",
