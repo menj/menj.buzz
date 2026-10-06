@@ -1,7 +1,7 @@
 /* Tailwind build configuration.
-   Colours resolve to the CSS variables declared in assets/site.css, so the
+   Colours resolve to the CSS variables declared in assets/css/site.css, so the
    palette is changed in one place. Rebuild with build/build.sh after adding
-   or removing any utility class in index.html or assets/site.js. */
+   or removing any utility class in index.html or assets/js/site.js. */
 module.exports = {
   content: [
     '../index.html',
@@ -9,7 +9,7 @@ module.exports = {
     '../press/*.html',
     '../sitemap.html',
     '../404.html',
-    '../assets/site.js'
+    '../assets/js/site.js'
   ],
   theme: {
     extend: {

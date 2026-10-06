@@ -21,12 +21,12 @@ That's it. Nothing else needs touching by hand.
 | Hero text, bio, any section's heading/intro | `data/content.json` |
 | Books, repos, services, archive items, the "Elsewhere" link list | `data/collections.json` |
 | Your name, photo, bio facts, site title/description | `data/site.json` |
-| Colours | `assets/site.css` (the `--c-*` variables near the top) |
+| Colours | `assets/css/site.css` (the `--c-*` variables near the top) |
 | Nav menu items and links | `data/content.json` → `nav` |
 | AI crawler permissions, brand terms, FAQs | `data/ai.json` |
 
 **Never hand-edit** `index.html`, `press.html`, `sitemap.html`, `404.html`,
-anything under `press/`, or `assets/tailwind.css`. All of them are
+anything under `press/`, or `assets/css/tailwind.css`. All of them are
 generated — the next build overwrites whatever you typed into them.
 
 ## Adding a press release
