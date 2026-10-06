@@ -508,7 +508,7 @@ lifetime. Nothing to run by hand; every `build.sh` run updates it.
 - Point the canonical host at the production domain if it is not `menj.buzz`.
   The host appears in the canonical link, the Open Graph and Twitter tags, the
   `Person` JSON-LD, `robots.txt` and `sitemap.xml`.
-- Update `lastmod` in `sitemap.xml` when the page changes materially.
+- `lastmod` in `sitemap.xml` is set by the build; rebuild rather than editing the file.
 - `.htaccess` already sets long cache lifetimes (`mod_expires`) and
   compression (`mod_deflate`/`mod_brotli`) for static assets, and short ones
   for the HTML itself — nothing to configure at the host, provided it runs

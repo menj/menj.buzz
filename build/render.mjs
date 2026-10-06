@@ -442,7 +442,7 @@ function siteGraph() {
       {
         '@type': 'Organization',
         '@id': ID.publisher,
-        name: 'Langgam Fikir Enterprise',
+        name: site.person.businessName || 'Langgam Fikir Enterprise',
         description: 'Independent imprint publishing in literature, history, ideas and religious discourse.',
         founder: { '@id': ID.person },
         address: { '@type': 'PostalAddress', addressLocality: 'Seri Kembangan', addressRegion: 'Selangor', addressCountry: 'MY' }
@@ -582,7 +582,7 @@ function releaseGraph(release) {
           ]
         }
       },
-      { '@type': 'Organization', '@id': ID.publisher, name: 'Langgam Fikir Enterprise', founder: { '@id': ID.person } },
+      { '@type': 'Organization', '@id': ID.publisher, name: site.person.businessName || 'Langgam Fikir Enterprise', founder: { '@id': ID.person } },
       { '@type': 'Person', '@id': ID.person, name: site.person.name, url: site.meta.canonical, sameAs: site.person.sameAs }
     ]
   };
