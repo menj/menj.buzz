@@ -5,10 +5,10 @@ set -euo pipefail
 cd "$(dirname "$0")"
 python3 images.py
 node render.mjs
-npx --yes tailwindcss@3.4.17 \
+npx --no-install tailwindcss \
   -c tailwind.config.js \
   -i tailwind.input.css \
-  -o ../assets/tailwind.css \
+  -o ../assets/css/tailwind.css \
   --minify
-echo "Wrote assets/tailwind.css"
+echo "Wrote assets/css/tailwind.css"
 node cache-bust.mjs

@@ -59,7 +59,6 @@
     marqueeBtn.addEventListener('click', function () {
       var paused = marquee.getAttribute('data-paused') === 'true';
       marquee.setAttribute('data-paused', paused ? 'false' : 'true');
-      marqueeBtn.setAttribute('aria-pressed', paused ? 'false' : 'true');
       marqueeBtn.textContent = paused ? 'Pause' : 'Play';
     });
   }
@@ -84,9 +83,9 @@
   }
 
   function decode(html) {
-    var box = document.createElement('div');
-    box.innerHTML = html;
-    return box.textContent.trim();
+    /* DOMParser builds an inert document: no scripts run and no images load. */
+    var doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+    return (doc.body.textContent || '').trim();
   }
 
   function formatDate(iso) {

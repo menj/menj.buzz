@@ -6,9 +6,8 @@ ErrorDocument 404 /404.html
 # .html file — no extensionless "clean" URLs. Adjust the host if the site moves.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-
+  # http and/or www reach the canonical https://menj.buzz in a single redirect
+  RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^www\.menj\.buzz$ [NC]
   RewriteRule ^(.*)$ https://menj.buzz/$1 [R=301,L]
 

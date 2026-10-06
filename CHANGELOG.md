@@ -13,6 +13,19 @@ the templates, `.htaccess` and the URL structure.
 
 ## [Unreleased]
 
+### Changed
+
+- **Assets split into `assets/css/` and `assets/js/`** — `site.css` and
+  `tailwind.css` moved to `assets/css/`, `site.js` to `assets/js/`; font URLs
+  in `site.css` now use `../fonts/`. Templates, `build.sh`, the Tailwind
+  config and `cache-bust.mjs` follow.
+- `.htaccess`: http and www now reach `https://menj.buzz` in one redirect.
+- `build.sh` uses the pinned `tailwindcss` dev dependency (`npm install`
+  once) instead of fetching it with `npx --yes` on every build.
+- `cache-bust.mjs` refreshes an existing `?v=` hash on re-run.
+- `site.js`: HTML in feed excerpts is decoded with `DOMParser`; the marquee
+  button no longer sets `aria-pressed` alongside its changing text.
+
 ## [2.4.1] — 2026-09-16
 
 ### Fixed

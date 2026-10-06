@@ -6,40 +6,40 @@
    ========================================================================= */
 @font-face {
   font-family: 'Special Elite';
-  src: url('fonts/special-elite-regular.woff2') format('woff2');
+  src: url('../fonts/special-elite-regular.woff2') format('woff2');
   font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'EB Garamond';
-  src: url('fonts/eb-garamond-variable.woff2') format('woff2-variations'),
-       url('fonts/eb-garamond-variable.woff2') format('woff2');
+  src: url('../fonts/eb-garamond-variable.woff2') format('woff2-variations'),
+       url('../fonts/eb-garamond-variable.woff2') format('woff2');
   font-weight: 400 800; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'EB Garamond';
-  src: url('fonts/eb-garamond-italic-variable.woff2') format('woff2-variations'),
-       url('fonts/eb-garamond-italic-variable.woff2') format('woff2');
+  src: url('../fonts/eb-garamond-italic-variable.woff2') format('woff2-variations'),
+       url('../fonts/eb-garamond-italic-variable.woff2') format('woff2');
   font-weight: 400 800; font-style: italic; font-display: swap;
 }
 
 @font-face {
   font-family: 'Sabon Next LT';
-  src: url('fonts/sabon-next-lt-regular.woff2') format('woff2');
+  src: url('../fonts/sabon-next-lt-regular.woff2') format('woff2');
   font-weight: 400; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Sabon Next LT';
-  src: url('fonts/sabon-next-lt-italic.woff2') format('woff2');
+  src: url('../fonts/sabon-next-lt-italic.woff2') format('woff2');
   font-weight: 400; font-style: italic; font-display: swap;
 }
 @font-face {
   font-family: 'Sabon Next LT';
-  src: url('fonts/sabon-next-lt-bold.woff2') format('woff2');
+  src: url('../fonts/sabon-next-lt-bold.woff2') format('woff2');
   font-weight: 700; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: 'Sabon Next LT';
-  src: url('fonts/sabon-next-lt-bolditalic.woff2') format('woff2');
+  src: url('../fonts/sabon-next-lt-bolditalic.woff2') format('woff2');
   font-weight: 700; font-style: italic; font-display: swap;
 }
 

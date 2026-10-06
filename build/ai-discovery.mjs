@@ -159,8 +159,8 @@ export function writeDiscoveryFiles({ root, site, content, collections, ai, rele
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="${BASE}/llms.html">
 <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', ...personGraph }).replace(/</g, '\\u003c')}</script>
-<link rel="stylesheet" href="/assets/tailwind.css">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/css/tailwind.css">
+<link rel="stylesheet" href="/assets/css/site.css">
 <style>
   body { max-width: 46rem; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
   h1 { font-size: 2rem; margin: 0 0 1.5rem; }

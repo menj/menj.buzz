@@ -27,7 +27,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..');
 const at = (...parts) => resolve(root, ...parts);
 
-const ASSETS = ['assets/tailwind.css', 'assets/site.css', 'assets/site.js'];
+const ASSETS = ['assets/css/tailwind.css', 'assets/css/site.css', 'assets/js/site.js'];
 const SKIP_DIRS = new Set(['build', 'data', 'assets', 'node_modules', '.git']);
 
 function hash(path) {
@@ -55,9 +55,11 @@ for (const file of files) {
   let text = readFileSync(at(file), 'utf8');
   let changed = false;
   for (const [asset, version] of Object.entries(versions)) {
-    const pattern = new RegExp(asset.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"', 'g');
-    if (pattern.test(text)) {
-      text = text.replace(pattern, `${asset}?v=${version}"`);
+    /* matches a bare reference or one already versioned, so a re-run refreshes the hash */
+    const pattern = new RegExp(asset.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(\\?v=[0-9a-f]+)?"', 'g');
+    const next = text.replace(pattern, `${asset}?v=${version}"`);
+    if (next !== text) {
+      text = next;
       changed = true;
     }
   }

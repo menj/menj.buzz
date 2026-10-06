@@ -58,7 +58,7 @@ is assembled from `data/site.json`, so the structured data and the visible page
 can never drift apart. Nothing is assembled in the browser except the blog feed.
 
 **Never edit `index.html`, `press.html`, `sitemap.html`, `404.html`,
-`press/*.html`, `assets/tailwind.css`, `sitemap.xml` or `robots.txt`
+`press/*.html`, `assets/css/tailwind.css`, `sitemap.xml` or `robots.txt`
 directly.** Every one of them is generated; the next build overwrites
 whatever you typed in by hand. Their sources are the matching files under
 `build/*.template.html` and the JSON in `data/`.
@@ -156,18 +156,18 @@ complete map. If it isn't in one of these files, it's a layout choice in
 | --- | --- |
 | Name, portrait, bio facts, `sameAs`, `Person` JSON-LD | `site.json` → `person` |
 | Site title, description, canonical, locale, theme colours, OG/Twitter tags | `site.json` → `meta` |
-| Colours — every one, night theme and day theme | `assets/site.css` → the `--c-*` custom properties in `:root` |
-| Fonts and type sizes | `assets/site.css`; see "Typography" |
+| Colours — every one, night theme and day theme | `assets/css/site.css` → the `--c-*` custom properties in `:root` |
+| Fonts and type sizes | `assets/css/site.css`; see "Typography" |
 | AI crawler permissions, brand terms, FAQs | `data/ai.json` |
 | Instagram token (for the automated pull) | `data/secrets.instagram.json(.enc)`, or `IG_ACCESS_TOKEN` |
 | Section order, page layout, HTML structure | `build/*.template.html` — the one thing you edit for layout, not content |
 | Wordmark colour | CSS token, as above |
 | Wordmark text | fixed by design — see "The wordmark" |
-| Day/Night, Pause/Play, Open/Close-menu button words | `assets/site.js` — see note below |
+| Day/Night, Pause/Play, Open/Close-menu button words | `assets/js/site.js` — see note below |
 
 Three pairs of words — the theme switch (Day/Night), the marquee toggle
 (Pause/Play), and the mobile-menu button (Open/Close the menu) — live in
-`assets/site.js`, which sets whichever word matches the current state at
+`assets/js/site.js`, which sets whichever word matches the current state at
 runtime. They're deliberately not duplicated into `content.json`: doing so
 would only create a second place that has to be kept in sync with the
 script for two-word toggle labels, not real editorial content.
@@ -397,8 +397,8 @@ so it renders identically whether or not the webfont has loaded and stays sharp
 at any size. The build inlines it into the header of every page so it can take
 its colours from CSS: MENJ uses `currentColor`, the separating point uses
 `--c-accent`, and BUZZ sits back at 45 per cent. Size is controlled by the
-`.wordmark` height in `assets/site.css`, not by the SVG. Its colour is a CSS
-token like everything else and lives in `assets/site.css`; its text does not
+`.wordmark` height in `assets/css/site.css`, not by the SVG. Its colour is a CSS
+token like everything else and lives in `assets/css/site.css`; its text does not
 live in `data/` at all, deliberately — outlined paths, not live text, are what
 make it render the same with or without the webfont, so the wording is fixed
 until the SVG is regenerated (below). An earlier `wordmark` key in
@@ -472,15 +472,15 @@ pyftsubset SabonNextLT.ttf --output-file=assets/fonts/sabon-next-lt-regular.woff
 
 ## Rebuilding the CSS
 
-`assets/tailwind.css` contains only the utility classes present in `index.html` and
-`assets/site.js` at build time. A class that was not present will do nothing until
+`assets/css/tailwind.css` contains only the utility classes present in `index.html` and
+`assets/js/site.js` at build time. A class that was not present will do nothing until
 the stylesheet is rebuilt:
 
 ```sh
 ./build/build.sh
 ```
 
-Requires Node. Nothing else in the site depends on it.
+Requires Node 18+ (run `npm install` once; Tailwind is a pinned dev dependency, so builds work offline) and Python 3 for `build/images.py`. Nothing else in the site depends on it.
 
 `build/cache-bust.mjs` runs as the last step of `build.sh`, after this. It
 hashes `tailwind.css`, `site.css` and `site.js` and appends `?v=<hash>` to
@@ -495,7 +495,7 @@ lifetime. Nothing to run by hand; every `build.sh` run updates it.
   footer. The choice persists to `localStorage`; with nothing stored the site
   follows `prefers-color-scheme`. A small inline snippet in `<head>` applies the
   theme before first paint so there is no flash.
-- Every colour is a CSS variable in `assets/site.css`. Changing the palette is one
+- Every colour is a CSS variable in `assets/css/site.css`. Changing the palette is one
   edit there; Tailwind's colour names resolve to the same variables.
 - The Contents rail appears at 1600 px and wider, where there is margin outside
   the centred column, and marks the section in view with `aria-current`.
